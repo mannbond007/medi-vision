@@ -1,46 +1,68 @@
 import Link from "next/link";
-import { Facebook, Twitter, Instagram, Linkedin, MapPin, Phone, Mail } from "lucide-react";
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  MapPin,
+  Phone,
+  Mail,
+} from "lucide-react";
 import { ROUTES } from "@/lib/data";
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-slate-300 pt-16 pb-8">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+    <footer className="bg-[#0f172a] text-slate-400 pt-20 pb-10">
+
+      <div className="max-w-[1400px] mx-auto px-8 md:px-16">
+
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-14 mb-16">
+
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center">
-                <span className="text-white font-bold text-xl leading-none">M</span>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-9 h-9 rounded-lg bg-accent flex items-center justify-center">
+                <span className="text-white font-bold text-lg">M</span>
               </div>
-              <span className="text-2xl font-bold text-white">Medi Vision</span>
+              <span className="text-xl font-semibold text-white tracking-wide">
+                Medi Vision
+              </span>
             </div>
-            <p className="text-slate-400 mb-6 max-w-sm">
-              Guiding Futures. Building Careers. Your trusted partner for global education, helping students secure admissions in top universities in India and Abroad.
+
+            <p className="leading-relaxed text-slate-400 max-w-sm mb-6">
+              Guiding futures with structured education and healthcare
+              pathways, connecting students to leading institutions globally.
             </p>
+
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-accent hover:text-white transition-colors">
-                <Facebook size={18} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-accent hover:text-white transition-colors">
-                <Twitter size={18} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-accent hover:text-white transition-colors">
-                <Instagram size={18} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-accent hover:text-white transition-colors">
-                <Linkedin size={18} />
-              </a>
+              {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
+                <a
+                  key={i}
+                  href="#"
+                  className="w-12 h-12 rounded-full bg-slate-800 
+                             flex items-center justify-center
+                             hover:bg-accent hover:text-white 
+                             transition-all duration-300"
+                >
+                  <Icon size={18} />
+                </a>
+              ))}
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white font-semibold text-lg mb-6">Quick Links</h3>
+            <h3 className="text-white font-medium text-base mb-6">
+              Quick Links
+            </h3>
             <ul className="space-y-3">
               {ROUTES.map((route) => (
                 <li key={route.path}>
-                  <Link href={route.path} className="hover:text-accent transition-colors">
+                  <Link
+                    href={route.path}
+                    className="hover:text-teal-500 transition-colors"
+                  >
                     {route.name}
                   </Link>
                 </li>
@@ -50,40 +72,66 @@ export default function Footer() {
 
           {/* Study Destinations */}
           <div>
-            <h3 className="text-white font-semibold text-lg mb-6">Study Destinations</h3>
+            <h3 className="text-white font-medium text-base mb-6">
+              Study Destinations
+            </h3>
             <ul className="space-y-3">
-              <li><Link href="/study-abroad" className="hover:text-accent transition-colors">Study in USA</Link></li>
-              <li><Link href="/study-abroad" className="hover:text-accent transition-colors">Study in UK</Link></li>
-              <li><Link href="/study-abroad" className="hover:text-accent transition-colors">Study in Canada</Link></li>
-              <li><Link href="/study-abroad" className="hover:text-accent transition-colors">Study in Australia</Link></li>
-              <li><Link href="/study-abroad" className="hover:text-accent transition-colors">Study in Germany</Link></li>
-              <li><Link href="/study-india" className="hover:text-accent transition-colors">Study in India</Link></li>
+              {["USA", "UK", "Canada", "Australia", "Germany", "India"].map(
+                (country, i) => (
+                  <li key={i}>
+                    <Link
+                      href="/study-abroad"
+                      className="hover:text-teal-500 transition-colors"
+                    >
+                      Study in {country}
+                    </Link>
+                  </li>
+                )
+              )}
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="text-white font-semibold text-lg mb-6">Contact Us</h3>
+            <h3 className="text-white font-medium text-base mb-6">
+              Contact
+            </h3>
+
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <MapPin size={20} className="text-accent shrink-0 mt-1" />
-                <span>123 Education Hub, Sector 62, Noida, Uttar Pradesh 201309, India</span>
+                <MapPin size={18} className="text-accent mt-1 shrink-0" />
+                <span>
+                  Nawal Kishor Road, Behind CBI Office, Front of Padmakar Bhawan,Hazratganj,Lucknow-226001
+                </span>
               </li>
+
               <li className="flex items-center gap-3">
-                <Phone size={20} className="text-accent shrink-0" />
-                <span>+91 98765 43210</span>
+                <Phone size={18} className="text-accent shrink-0" />
+                <span>+91 8881966002</span>
               </li>
+
               <li className="flex items-center gap-3">
-                <Mail size={20} className="text-accent shrink-0" />
-                <span>info@medivisioncareer.com</span>
+                <Mail size={18} className="text-accent shrink-0" />
+                <span>medivisoncareerpvtltd@gmail.com</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t-[1px] border-[#00A896]/70 pt-8 text-center text-sm text-slate-500">
+        {/* Bottom */}
+        <div className="border-t border-slate-700 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500 gap-4">
           <p>© 2026 Medi Vision Career Pvt. Ltd. All Rights Reserved.</p>
+
+          <div className="flex gap-6">
+            <Link href="/privacy" className="hover:text-white">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="hover:text-white">
+              Terms of Service
+            </Link>
+          </div>
         </div>
+
       </div>
     </footer>
   );

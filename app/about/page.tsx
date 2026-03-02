@@ -1,3 +1,5 @@
+"use client";
+
 import AnimatedSection, {
   StaggerChildren,
   StaggerItem,
@@ -11,6 +13,8 @@ import {
   Eye,
   Gem,
   ArrowRight,
+  TrendingUp,
+  Globe2,
 } from "lucide-react";
 import Image from "next/image";
 
@@ -57,7 +61,7 @@ export default function About() {
             {/* Metrics */}
             <div
               className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 
-  gap-6 md:gap-8 max-w-7xl mx-auto px-4"
+                         gap-6 md:gap-8 max-w-7xl mx-auto px-4"
             >
               {[
                 { value: "10+ Years", label: "Industry Experience" },
@@ -68,13 +72,13 @@ export default function About() {
                 <div
                   key={i}
                   className="relative group rounded-2xl 
-      bg-white/5 backdrop-blur-md 
-      border border-white/10 
-      px-6 md:px-8 py-7 md:py-8 
-      text-center
-      transition-all duration-300
-      hover:border-emerald-400/40 
-      hover:bg-white/10"
+                bg-white/5 backdrop-blur-md 
+                border border-white/10 
+                px-6 md:px-8 py-7 md:py-8 
+                text-center
+                transition-all duration-300
+                hover:border-emerald-400/40 
+               hover:bg-white/10"
                 >
                   {/* Accent Line */}
                   <div
@@ -230,7 +234,19 @@ export default function About() {
       <section className="py-24 bg-slate-50 relative">
         <div className="container mx-auto px-6 md:px-12">
           <AnimatedSection className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-sm font-bold text-accent uppercase tracking-wider mb-2">
+            <h2
+              className="inline-flex items-center gap-3 px-6 py-1.5 
+               bg-gradient-to-r from-accent/10 to-accent/5 
+               text-accent text-sm font-semibold uppercase 
+               tracking-[0.3em] rounded-full mb-6 
+               border border-accent/20 shadow-sm"
+            >
+              <span
+                className="flex items-center justify-center w-8 h-8 
+                   bg-accent/15 rounded-full border border-accent/20"
+              >
+                <Globe2 className="w-4 h-4 text-accent" />
+              </span>
               Our Growth & Expansion
             </h2>
             <h3 className="text-3xl md:text-4xl font-bold text-primary">
@@ -238,52 +254,97 @@ export default function About() {
             </h3>
           </AnimatedSection>
 
-          <div className="max-w-4xl mx-auto relative">
-            <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-0.5 bg-slate-200 -translate-x-1/2" />
+          <div className="max-w-7xl mx-auto relative">
+            <div className="absolute border-2 border-teal-500 left-[28px] md:left-1/2 top-0 bottom-0 w-0.5 bg-slate-200 -translate-x-1/2" />
 
             <StaggerChildren className="space-y-12">
               {[
                 {
                   year: "Experience",
                   title: "Over a Decade in Education",
-                  desc: "Successfully guided hundreds of students toward the right academic paths, especially in medical education.",
+                  points: [
+                    "Guided 1000+ students in structured career planning",
+                    "Specialized in medical education pathways",
+                    "Strong institutional collaborations",
+                  ],
                 },
                 {
                   year: "Vision",
                   title: "Integrated Ecosystem",
-                  desc: "Connecting education, healthcare professionals, institutions, and global medical services.",
+                  points: [
+                    "Connecting education with healthcare networks",
+                    "Global institutional partnerships",
+                    "Digital-first advisory model",
+                  ],
                 },
                 {
                   year: "Healthcare Expansion",
                   title: "Medical & Pharmaceutical Solutions",
-                  desc: "Planning expansion into medical instruments, pharmaceutical distribution, and healthcare solutions.",
+                  points: [
+                    "Equipment sourcing partnerships",
+                    "Pharmaceutical distribution planning",
+                    "Clinical infrastructure advisory",
+                  ],
                 },
                 {
                   year: "Future Roadmap",
                   title: "Medical Tourism",
-                  desc: "Aiming to facilitate cross-border healthcare services connecting hospitals and international patients.",
+                  points: [
+                    "International patient facilitation",
+                    "Hospital & specialist alignment",
+                    "End-to-end treatment logistics",
+                  ],
                 },
               ].map((item, i) => (
                 <StaggerItem
                   key={i}
-                  className={`relative flex flex-col md:flex-row gap-8 ${i % 2 === 0 ? "md:flex-row-reverse" : ""}`}
+                  className={`relative flex flex-col md:flex-row gap-10 ${
+                    i % 2 === 0 ? "md:flex-row-reverse" : ""
+                  }`}
                 >
+                  {/* Card */}
                   <div className="flex-1 md:w-1/2 pl-16 md:pl-0">
                     <div
-                      className={`bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg transition-shadow bg-opacity-80 backdrop-blur-sm ${i % 2 === 0 ? "md:text-left" : "md:text-right"}`}
+                      className={`relative bg-white/95 p-8 rounded-3xl 
+          border border-green-500/20 
+          shadow-[0_15px_40px_-15px_rgba(0,0,0,0.12)] 
+          transition-all duration-300
+          ${i % 2 === 0 ? "md:text-left" : "md:text-right"}`}
                     >
-                      <div className="text-accent font-black text-2xl mb-2">
+                      <div className="relative inline-block text-accent font-semibold text-lg tracking-wide mb-3">
                         {item.year}
+                        <span className="absolute left-0 -bottom-1 w-16 h-[2px] bg-accent rounded-full"></span>
                       </div>
-                      <h4 className="text-xl font-bold text-primary mb-3">
+
+                      <h4 className="text-xl font-semibold text-primary mb-4">
                         {item.title}
                       </h4>
-                      <p className="text-slate-600">{item.desc}</p>
+
+                      <ul className="space-y-2.5">
+                        {item.points.map((point, idx) => (
+                          <li
+                            key={idx}
+                            className={`flex items-start gap-2 ${
+                              i % 2 !== 0
+                                ? "md:flex-row-reverse md:text-right"
+                                : ""
+                            }`}
+                          >
+                            <CheckCircle2 className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
+                            <span className="text-slate-600 text-sm leading-relaxed">
+                              {point}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
 
-                  <div className="absolute left-0 md:left-1/2 top-6 w-14 h-14 bg-white border-4 border-slate-100 rounded-full flex items-center justify-center -translate-x-1/2 z-10 shadow-sm">
-                    <div className="w-5 h-5 bg-accent rounded-full" />
+                  {/* Timeline Circle */}
+                  <div className="absolute left-0 md:left-1/2 top-8 -translate-x-1/2 z-10">
+                    <div className="w-14 h-14 bg-white border-4 border-accent/30 rounded-full flex items-center justify-center shadow-md">
+                      <div className="w-6 h-6 bg-accent rounded-full" />
+                    </div>
                   </div>
 
                   <div className="hidden md:block flex-1 md:w-1/2" />
@@ -295,7 +356,6 @@ export default function About() {
       </section>
 
       {/* ================= FINAL SECTION ================= */}
-
       <section className="relative min-h-screen w-full overflow-hidden bg-black py-32">
         {/* Ocean Glow */}
         <div
@@ -357,7 +417,7 @@ export default function About() {
                 ],
               },
               {
-                title: "Values",
+                title: "Commitment",
                 icon: <Gem size={26} strokeWidth={1.8} />,
                 points: [
                   "Integrity in every interaction",
@@ -377,8 +437,9 @@ export default function About() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-semibold text-white mb-6 tracking-wide">
+                <h3 className="text-xl font-semibold text-white mb-6 tracking-wide relative inline-block">
                   {item.title}
+                  <span className="absolute  left-0 -bottom-1 w-[70%] h-[2px] bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full"></span>
                 </h3>
 
                 {/* Bullet Points */}
