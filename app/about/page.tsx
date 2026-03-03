@@ -15,6 +15,9 @@ import {
   ArrowRight,
   TrendingUp,
   Globe2,
+  Plane,
+  Stethoscope,
+  Layers3,
 } from "lucide-react";
 import Image from "next/image";
 
@@ -231,65 +234,87 @@ export default function About() {
       </section>
 
       {/* ================= TIMELINE ================= */}
-      <section className="py-24 bg-slate-50 relative">
+
+
+      <section className="py-28 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
         <div className="container mx-auto px-6 md:px-12">
-          <AnimatedSection className="text-center max-w-3xl mx-auto mb-20">
+
+          {/* Header */}
+          <AnimatedSection className="text-center max-w-3xl mx-auto mb-24">
             <h2
-              className="inline-flex items-center gap-3 px-6 py-1.5 
-               bg-gradient-to-r from-accent/10 to-accent/5 
-               text-accent text-sm font-semibold uppercase 
-               tracking-[0.3em] rounded-full mb-6 
-               border border-accent/20 shadow-sm"
+              className="inline-flex items-center gap-3 px-6 py-2
+        bg-accent/10 text-accent text-xs font-semibold uppercase
+        tracking-[0.35em] rounded-full mb-6 border border-accent/20"
             >
-              <span
-                className="flex items-center justify-center w-8 h-8 
-                   bg-accent/15 rounded-full border border-accent/20"
-              >
+              <span className="flex items-center justify-center w-8 h-8 bg-accent/15 rounded-full">
                 <Globe2 className="w-4 h-4 text-accent" />
               </span>
-              Our Growth & Expansion
+              Corporate Evolution
             </h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-primary">
-              From Education to Healthcare Vision
+
+            <h3 className="text-3xl md:text-4xl font-bold text-primary leading-tight">
+              From Education Leadership to Healthcare Expansion
             </h3>
+
+            <p className="mt-6 text-slate-600 text-base leading-relaxed">
+              Medi Vision Career Pvt. Ltd. is building a structured ecosystem
+              that connects education, healthcare, and global medical
+              opportunities through ethical and transparent frameworks.
+            </p>
           </AnimatedSection>
 
-          <div className="max-w-7xl mx-auto relative">
-            <div className="absolute border-2 border-teal-500 left-[28px] md:left-1/2 top-0 bottom-0 w-0.5 bg-slate-200 -translate-x-1/2" />
+          {/* Timeline Wrapper */}
+          <div className="max-w-6xl mx-auto relative">
 
-            <StaggerChildren className="space-y-12">
+            {/* Vertical Line */}
+            <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-[2px] bg-slate-200 -translate-x-1/2" />
+
+            <StaggerChildren className="space-y-20">
+
               {[
                 {
-                  year: "Experience",
-                  title: "Over a Decade in Education",
-                  points: [
-                    "Guided 1000+ students in structured career planning",
-                    "Specialized in medical education pathways",
+                  label: "Foundation",
+                  icon: GraduationCap,
+                  title: "Over a Decade in Education Advisory",
+                  description:
+                    "With more than 10 years of structured experience, Medi Vision has guided students toward sustainable academic and professional careers, particularly in the medical education domain.",
+                  highlights: [
+                    "1000+ students guided with structured career planning",
+                    "Specialized expertise in MBBS pathways (India & Overseas)",
                     "Strong institutional collaborations",
                   ],
                 },
                 {
-                  year: "Vision",
-                  title: "Integrated Ecosystem",
-                  points: [
-                    "Connecting education with healthcare networks",
-                    "Global institutional partnerships",
-                    "Digital-first advisory model",
+                  label: "Education Ecosystem",
+                  icon: Layers3,
+                  title: "Multi-Platform Academic Network",
+                  description:
+                    "Operating under Medi Vision Career Pvt. Ltd., multiple platforms deliver transparent, long-term student support across diverse professional programs.",
+                  highlights: [
+                    "MBBS Route – Overseas medical education guidance",
+                    "Milestone Scholarship Program – Merit & need-based support",
+                    "Study in India – Admissions for medical, engineering & management",
                   ],
                 },
                 {
-                  year: "Healthcare Expansion",
-                  title: "Medical & Pharmaceutical Solutions",
-                  points: [
-                    "Equipment sourcing partnerships",
-                    "Pharmaceutical distribution planning",
-                    "Clinical infrastructure advisory",
+                  label: "Strategic Expansion",
+                  icon: Stethoscope,
+                  title: "Healthcare & Medical Solutions (Planned)",
+                  description:
+                    "As part of its long-term growth roadmap, the organization is expanding into structured healthcare services across India and CIS countries.",
+                  highlights: [
+                    "Medical instruments & equipment supply planning",
+                    "Pharmaceutical & drug distribution framework",
+                    "Clinical and hospital infrastructure advisory",
                   ],
                 },
                 {
-                  year: "Future Roadmap",
-                  title: "Medical Tourism",
-                  points: [
+                  label: "Future Vision",
+                  icon: Plane,
+                  title: "Global Medical Tourism Network",
+                  description:
+                    "The future roadmap includes facilitating international patients by connecting hospitals, specialists, and support systems across borders.",
+                  highlights: [
                     "International patient facilitation",
                     "Hospital & specialist alignment",
                     "End-to-end treatment logistics",
@@ -298,59 +323,67 @@ export default function About() {
               ].map((item, i) => (
                 <StaggerItem
                   key={i}
-                  className={`relative flex flex-col md:flex-row gap-10 ${
-                    i % 2 === 0 ? "md:flex-row-reverse" : ""
-                  }`}
+                  className={`relative flex flex-col md:flex-row gap-12 ${i % 2 === 0 ? "md:flex-row-reverse" : ""
+                    }`}
                 >
+
                   {/* Card */}
-                  <div className="flex-1 md:w-1/2 pl-16 md:pl-0">
+                  <div className="flex-1 md:w-[58%] pl-16 md:pl-0">
                     <div
-                      className={`relative bg-white/95 p-8 rounded-3xl 
-          border border-green-500/20 
-          shadow-[0_15px_40px_-15px_rgba(0,0,0,0.12)] 
-          transition-all duration-300
-          ${i % 2 === 0 ? "md:text-left" : "md:text-right"}`}
+                      className="bg-white p-10 rounded-3xl
+                border border-slate-200
+                shadow-[0_20px_60px_-20px_rgba(0,0,0,0.08)]
+                hover:shadow-[0_25px_70px_-20px_rgba(0,0,0,0.12)]
+                transition-all duration-500"
                     >
-                      <div className="relative inline-block text-accent font-semibold text-lg tracking-wide mb-3">
-                        {item.year}
-                        <span className="absolute left-0 -bottom-1 w-16 h-[2px] bg-accent rounded-full"></span>
+
+                      {/* Label Badge with Icon */}
+                      <div className="inline-flex items-center gap-2 px-4 py-2 
+                  bg-accent/10 border border-accent/20 
+                  rounded-full text-accent text-xs font-semibold 
+                  uppercase tracking-[0.25em] w-fit">
+                        <item.icon className="w-4 h-4 text-accent" />
+                        {item.label}
                       </div>
 
-                      <h4 className="text-xl font-semibold text-primary mb-4">
+                      {/* Title */}
+                      <h4 className="text-2xl font-semibold text-primary mt-4 mb-4">
                         {item.title}
                       </h4>
 
-                      <ul className="space-y-2.5">
-                        {item.points.map((point, idx) => (
-                          <li
-                            key={idx}
-                            className={`flex items-start gap-2 ${
-                              i % 2 !== 0
-                                ? "md:flex-row-reverse md:text-right"
-                                : ""
-                            }`}
-                          >
+                      {/* Description */}
+                      <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                        {item.description}
+                      </p>
+
+                      {/* Highlights */}
+                      <ul className="space-y-3">
+                        {item.highlights.map((point, idx) => (
+                          <li key={idx} className="flex items-start gap-3">
                             <CheckCircle2 className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
-                            <span className="text-slate-600 text-sm leading-relaxed">
+                            <span className="text-slate-700 text-sm">
                               {point}
                             </span>
                           </li>
                         ))}
                       </ul>
+
                     </div>
                   </div>
 
-                  {/* Timeline Circle */}
-                  <div className="absolute left-0 md:left-1/2 top-8 -translate-x-1/2 z-10">
+                  {/* Timeline Dot */}
+                  <div className="absolute left-0 md:left-1/2 top-10 -translate-x-1/2 z-10">
                     <div className="w-14 h-14 bg-white border-4 border-accent/30 rounded-full flex items-center justify-center shadow-md">
                       <div className="w-6 h-6 bg-accent rounded-full" />
                     </div>
                   </div>
 
-                  <div className="hidden md:block flex-1 md:w-1/2" />
+                  {/* Spacer */}
+                  <div className="hidden md:block flex-1 md:w-[42%]" />
                 </StaggerItem>
               ))}
             </StaggerChildren>
+
           </div>
         </div>
       </section>
