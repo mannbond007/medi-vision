@@ -132,7 +132,7 @@ export default function ContactPage() {
                       ].map((item, i) => (
                         <div key={i} className="flex items-start gap-6">
                           <div className="w-16 h-16 bg-white/10 text-accent rounded-full flex items-center justify-center shrink-0 backdrop-blur-md">
-                            <item.icon size={22} />
+                            <item.icon size={26} />
                           </div>
                           <div>
                             <h4 className="font-semibold text-white mb-2 text-lg">
