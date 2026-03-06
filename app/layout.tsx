@@ -3,14 +3,20 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import PageTransition from "@/components/PageTransition";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   title: "Medi Vision | Guiding Futures. Building Careers.",
-  description: "Your Trusted Partner for Global Education. Helping students secure admissions in top universities in India and Abroad. Expert career counseling, visa processing, and university selection.",
-  keywords: ["Admission Consultancy", "Study Abroad", "Study in India", "Career Counseling", "University Admissions"],
+  description:
+    "Your Trusted Partner for Global Education. Helping students secure admissions in top universities in India and Abroad. Expert career counseling, visa processing, and university selection.",
+  keywords: [
+    "Admission Consultancy",
+    "Study Abroad",
+    "Study in India",
+    "Career Counseling",
+    "University Admissions",
+  ],
   authors: [{ name: "Medi Vision Career Pvt. Ltd." }],
   openGraph: {
     title: "Medi Vision | Guiding Futures.",
@@ -29,13 +35,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} font-sans min-h-screen flex flex-col`}>
+      <body
+        className={`${inter.variable} font-sans min-h-screen flex flex-col`}
+      >
         <Navbar />
-        <main className="flex-grow pt-20">
-          <PageTransition>
-            {children}
-          </PageTransition>
-        </main>
+        <main className="flex-grow pt-20">{children}</main>
         <Footer />
       </body>
     </html>
