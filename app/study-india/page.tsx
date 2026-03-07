@@ -454,20 +454,18 @@ export default function StudyIndia() {
                         </p>
 
                         <div className="flex gap-3">
+                          <Link href="/apply" className="flex-1">
+                            <button className="w-full bg-emerald-500 text-white py-2 rounded-lg text-sm font-medium hover:bg-emerald-600 transition">
+                              Apply
+                            </button>
+                          </Link>
 
-  <Link href="/apply" className="flex-1">
-    <button className="w-full bg-emerald-500 text-white py-2 rounded-lg text-sm font-medium hover:bg-emerald-600 transition">
-      Apply
-    </button>
-  </Link>
-
-  <Link href="/view-more" className="flex-1">
-    <button className="w-full border border-white/20 text-gray-200 py-2 rounded-lg text-sm hover:bg-white/10 transition">
-      View More
-    </button>
-  </Link>
-
-</div>
+                          <Link href="/view-more" className="flex-1">
+                            <button className="w-full border border-white/20 text-gray-200 py-2 rounded-lg text-sm hover:bg-white/10 transition">
+                              View More
+                            </button>
+                          </Link>
+                        </div>
                       </div>
                     </div>
                   </StaggerItem>
@@ -480,8 +478,8 @@ export default function StudyIndia() {
 
       {/* Admission Process (Timeline) */}
 
-      <section className="py-24 relative overflow-hidden">
-        {/* Emerald Background */}
+      <section className="py-24  relative overflow-hidden">
+        {/* Background */}
         <div className="absolute inset-0 -z-10 bg-black">
           <div
             className="absolute inset-0"
@@ -493,12 +491,12 @@ export default function StudyIndia() {
         </div>
 
         <div className="container mx-auto px-6 md:px-12">
-          {/* Section Header */}
+          {/* Header */}
           <AnimatedSection className="text-center max-w-4xl mx-auto mb-20">
             <div
               className="inline-flex items-center gap-2 px-4 py-1.5
-  bg-emerald-500/10 border border-emerald-400/30
-  rounded-full text-md font-semibold text-emerald-400 mb-5"
+        bg-emerald-500/10 border border-emerald-400/30
+        rounded-full text-md font-semibold text-emerald-400 mb-5"
             >
               <Workflow className="w-5 h-5" />
               How It Works
@@ -510,40 +508,40 @@ export default function StudyIndia() {
 
             <p className="text-gray-400 text-lg leading-relaxed max-w-4xl mx-auto">
               Applying to universities can sometimes feel confusing and
-              stressful. We make the process simple by guiding you at every
-              step, starting from evaluating your academic profile and helping
-              you secure your admission to the right university.
+              stressful. Our team guides you through every stage of the
+              admission journey so you can focus on choosing the right
+              university and building your future.
             </p>
           </AnimatedSection>
 
           {/* Steps */}
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 items-stretch">
+          <div className="max-w-[1600px] py-12 mx-auto grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
             {[
               {
                 step: "01",
                 title: "Profile Evaluation",
                 points: [
-                  "Analyze academic background",
-                  "Identify career goals",
-                  "Evaluate eligibility for universities",
+                  "Review academic background",
+                  "Understand career goals",
+                  "Check university eligibility",
                 ],
               },
               {
                 step: "02",
                 title: "University Selection",
                 points: [
-                  "Shortlist universities",
-                  "Match budget and profile",
-                  "Identify best programs",
+                  "Shortlist best universities",
+                  "Match budget and preferences",
+                  "Select suitable programs",
                 ],
               },
               {
                 step: "03",
-                title: "Application & Documentation",
+                title: "Application Process",
                 points: [
-                  "Prepare SOP and documents",
-                  "Complete application forms",
+                  "Prepare documents and SOP",
                   "Submit strong applications",
+                  "Track application progress",
                 ],
               },
               {
@@ -551,46 +549,52 @@ export default function StudyIndia() {
                 title: "Admission & Enrollment",
                 points: [
                   "Receive admission offer",
-                  "Complete enrollment process",
+                  "Complete enrollment formalities",
                   "Secure your university seat",
                 ],
               },
             ].map((item, i) => (
-              <AnimatedSection key={i} delay={i * 0.1} className="h-full">
+              <AnimatedSection key={i} delay={i * 0.1}>
                 <div
-                  className="group h-full flex flex-col rounded-2xl p-8
+                  className="group relative flex flex-col min-h-[340px] p-12 rounded-2xl
             bg-white/5 backdrop-blur-xl
             border border-white/10
             shadow-[0_10px_35px_rgba(0,0,0,0.5)]
             hover:border-emerald-400/40
-            hover:shadow-[0_15px_50px_rgba(16,185,129,0.25)]
+            hover:shadow-[0_20px_60px_rgba(16,185,129,0.25)]
+            hover:-translate-y-2
             transition-all duration-300"
                 >
                   {/* Step Number */}
                   <div
-                    className="w-14 h-14 rounded-full
-              bg-emerald-500/20 text-emerald-400 font-semibold text-lg
-              flex items-center justify-center mb-6
-              border border-emerald-400/30
-              group-hover:bg-emerald-500 group-hover:text-white transition"
+                    className="absolute -top-7 left-10
+                    w-16 h-16 rounded-full
+                    bg-emerald-500/50
+                    text-white font-semibold text-xl
+                    flex items-center justify-center
+                    border border-white/10
+                    shadow-[0_12px_30px_rgba(0,0,0,0.45)]
+                    backdrop-blur-md
+                    transition-all duration-300"
                   >
                     {item.step}
                   </div>
 
                   {/* Title */}
-                  <h4 className="text-lg font-semibold text-white mb-5">
+                  <h4 className="text-xl font-semibold text-white mt-8 mb-6">
                     {item.title}
                   </h4>
 
-                  {/* Bullet Points */}
-                  <ul className="space-y-3 text-left flex-grow">
+                  {/* Points */}
+                  <ul className="space-y-4">
                     {item.points.map((point, index) => (
                       <li
                         key={index}
-                        className="flex items-start gap-2 text-gray-300 text-sm"
+                        className="flex items-start gap-3 text-gray-300 text-[15px]"
                       >
-                        <CheckCircle className="w-4 h-4 text-emerald-400 mt-[2px]" />
-                        <span>{point}</span>
+                        <CheckCircle className="w-5 h-5 text-emerald-400 mt-[3px] flex-shrink-0" />
+
+                        <span className="leading-relaxed">{point}</span>
                       </li>
                     ))}
                   </ul>
