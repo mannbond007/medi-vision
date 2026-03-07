@@ -1,114 +1,602 @@
-import AnimatedSection, { StaggerChildren, StaggerItem } from "@/components/AnimatedSection";
+import AnimatedSection, {
+  StaggerChildren,
+  StaggerItem,
+} from "@/components/AnimatedSection";
 import UniversityCard from "@/components/UniversityCard";
 import { UNIVERSITIES } from "@/lib/data";
-import { BookOpen, GraduationCap, Building2, HelpCircle } from "lucide-react";
+import {
+  BookOpen,
+  GraduationCap,
+  Building2,
+  HelpCircle,
+  CheckCircle,
+  Workflow,
+} from "lucide-react";
+import Link from "next/link";
 
 export default function StudyIndia() {
-  const indianUniversities = UNIVERSITIES.filter(u => u.country === "India");
+  const indianUniversities = UNIVERSITIES.filter((u) => u.country === "India");
 
   return (
     <>
       {/* Header */}
-      <section className="bg-primary py-24 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
-        
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#020617] to-[#020617] py-28">
+        {/* Background Glow */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-cyan-500/20 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-500/20 rounded-full blur-[120px]" />
+
         <div className="container mx-auto px-6 md:px-12 relative z-10">
-          <AnimatedSection className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6">Study in India</h1>
-            <p className="text-xl text-slate-300 font-light leading-relaxed mb-8">
-              Experience world-class education combined with rich cultural heritage. From premier engineering institutes to top medical colleges, India offers unparalleled academic opportunities.
-            </p>
-            <div className="flex flex-wrap gap-4">
-               <div className="bg-white/10 backdrop-blur-md px-6 py-3 rounded-xl border border-white/20 text-white flex items-center gap-2">
-                 <Building2 size={20} className="text-accent" /> 1000+ Universities
-               </div>
-               <div className="bg-white/10 backdrop-blur-md px-6 py-3 rounded-xl border border-white/20 text-white flex items-center gap-2">
-                 <GraduationCap size={20} className="text-accent" /> Globablly Recognized Degrees
-               </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            {/* LEFT CONTENT */}
+            <AnimatedSection>
+              <span className="inline-block mb-4 px-4 py-1 text-sm rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                Global Education Hub
+              </span>
 
-      {/* Top Universities Section */}
-      <section className="py-24 bg-slate-50">
-        <div className="container mx-auto px-6 md:px-12">
-          <AnimatedSection className="mb-12">
-            <h2 className="text-sm font-bold text-accent uppercase tracking-wider mb-2">Institutions</h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-primary">Top Ranked Universities</h3>
-          </AnimatedSection>
-          
-          <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {indianUniversities.map((uni, i) => (
-              <StaggerItem key={i}>
-                <UniversityCard {...uni} />
-              </StaggerItem>
-            ))}
-          </StaggerChildren>
-        </div>
-      </section>
+              <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+                Study in <span className="text-cyan-400">India</span>
+              </h1>
 
-      {/* Admission Process (Timeline) */}
-      <section className="py-24 bg-white relative">
-        <div className="container mx-auto px-6 md:px-12">
-           <AnimatedSection className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-sm font-bold text-accent uppercase tracking-wider mb-2">How It Works</h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-primary">Simplified Admission Process</h3>
-          </AnimatedSection>
+              <p className="text-lg md:text-xl text-slate-400 leading-relaxed mb-10 max-w-xl">
+                Experience world-class education combined with India’s rich
+                cultural heritage. Access top universities, globally recognized
+                degrees, and affordable education opportunities for
+                international students.
+              </p>
 
-          <div className="max-w-5xl mx-auto grid md:grid-cols-4 gap-8">
-             {[
-               { step: "01", title: "Profile Evaluation", desc: "We assess your academic background and career goals." },
-               { step: "02", title: "University Selection", desc: "Shortlisting colleges based on your preferences." },
-               { step: "03", title: "Application & Documentation", desc: "Assistance with forms, SOPs, and LORs." },
-               { step: "04", title: "Admission & Enrollment", desc: "Finalizing offer letters and securing your seat." },
-             ].map((item, i) => (
-               <AnimatedSection key={i} delay={i * 0.1} className="relative">
-                 {/* Connecting line for desktop */}
-                 {i < 3 && <div className="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-slate-100 -z-10" />}
-                 
-                 <div className="bg-white border text-center border-slate-100 p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow group relative overflow-hidden h-full">
-                    {/* Hover effect background */}
-                    <div className="absolute inset-0 bg-primary translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300 ease-out z-0" />
-                    
-                    <div className="relative z-10 flex flex-col items-center">
-                       <div className="w-16 h-16 rounded-full bg-slate-50 text-accent font-black text-2xl flex items-center justify-center mb-6 group-hover:bg-white/10 group-hover:text-white transition-colors duration-300">
-                         {item.step}
-                       </div>
-                       <h4 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-white transition-colors duration-300">{item.title}</h4>
-                       <p className="text-slate-600 group-hover:text-slate-300 transition-colors duration-300">{item.desc}</p>
-                    </div>
-                 </div>
-               </AnimatedSection>
-             ))}
+              {/* CTA Buttons */}
+              <div className="flex flex-wrap gap-4 mb-10">
+                <button className="px-7 py-3 rounded-xl bg-cyan-500 text-white font-semibold hover:bg-cyan-400 transition shadow-lg shadow-cyan-500/30">
+                  Explore Universities
+                </button>
+
+                <button className="px-7 py-3 rounded-xl border border-white/20 text-white hover:bg-white/10 transition">
+                  View Scholarships
+                </button>
+              </div>
+
+              {/* Stats */}
+              <div className="flex flex-wrap gap-6">
+                <div className="flex items-center gap-3 bg-white/5 backdrop-blur-xl px-5 py-3 rounded-xl border border-white/10 hover:border-cyan-500/40 transition">
+                  <Building2 size={22} className="text-cyan-400" />
+                  <span className="text-white text-sm">1000+ Universities</span>
+                </div>
+
+                <div className="flex items-center gap-3 bg-white/5 backdrop-blur-xl px-5 py-3 rounded-xl border border-white/10 hover:border-cyan-500/40 transition">
+                  <GraduationCap size={22} className="text-cyan-400" />
+                  <span className="text-white text-sm">
+                    Globally Recognized Degrees
+                  </span>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            {/* RIGHT SIDE HERO IMAGE */}
+            <AnimatedSection delay={0.2}>
+              <div className="relative flex justify-center items-center">
+                {/* Background Glow */}
+                <div className="absolute inset-0 bg-cyan-500/20 blur-[100px] rounded-full"></div>
+
+                {/* Image Wrapper */}
+                <div className="relative p-[1px] rounded-2xl bg-gradient-to-r from-cyan-400/40 via-blue-500/40 to-purple-500/40 shadow-[0_25px_60px_rgba(0,0,0,0.6)]">
+                  {/* Image */}
+                  <img
+                    src="/about_hero.png"
+                    alt="Study in India"
+                    className="rounded-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.7)]"
+                  />
+                </div>
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-24 bg-slate-50">
-        <div className="container mx-auto px-6 md:px-12 max-w-3xl">
+      {/* Top Universities Section */}
+      <section className="relative py-24">
+        {/* Emerald Background */}
+        <div className="absolute inset-0 bg-gray-900 -z-10">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `
+        radial-gradient(circle at 50% 50%, 
+        rgba(34,197,94,0.18) 0%, 
+        rgba(34,197,94,0.1) 25%, 
+        rgba(34,197,94,0.04) 35%, 
+        transparent 50%)
+      `,
+            }}
+          />
+        </div>
+
+        <div className="container mx-auto px-6 md:px-12">
+          {/* Heading */}
           <AnimatedSection className="text-center mb-16">
-            <h3 className="text-3xl font-bold text-primary mb-4 flex items-center justify-center gap-3">
-              <HelpCircle className="text-accent" /> Frequently Asked Questions
-            </h3>
+            <div className="flex justify-center mb-4">
+              <div
+                className="inline-flex items-center gap-2 px-4 py-2
+  bg-emerald-500/10 border border-emerald-400/30
+  rounded-full text-emerald-400 text-sm font-semibold
+  tracking-widest uppercase backdrop-blur-sm"
+              >
+                <GraduationCap className="w-6 h-6" />
+                Institutions
+              </div>
+            </div>
+
+            <div className="text-center">
+              <h3 className="text-3xl md:text-4xl font-bold text-white">
+                Top Universities in India
+              </h3>
+
+              <div className="flex justify-center mt-1.5">
+                <svg
+                  width="220"
+                  height="18"
+                  viewBox="0 0 220 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="opacity-90 drop-shadow-[0_0_6px_rgba(16,185,129,0.45)]"
+                >
+                  <defs>
+                    <linearGradient
+                      id="emeraldMarker"
+                      x1="0"
+                      y1="0"
+                      x2="220"
+                      y2="0"
+                    >
+                      <stop offset="0%" stopColor="#10B981" />
+                      <stop offset="50%" stopColor="#34D399" />
+                      <stop offset="100%" stopColor="#059669" />
+                    </linearGradient>
+                  </defs>
+
+                  <path
+                    d="M6 12 C50 4, 110 16, 170 10 S210 8, 214 12"
+                    stroke="url(#emeraldMarker)"
+                    strokeWidth="6"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+              Explore India's leading universities offering world-class
+              education, modern infrastructure, global collaborations and strong
+              career opportunities.
+            </p>
           </AnimatedSection>
 
-          <div className="space-y-4">
-             {[
-               { q: "What is the best time to apply for Indian universities?", a: "Most central and state universities accept applications between May and July. However, private university admissions often start as early as January." },
-               { q: "Do you help with education loans?", a: "Yes, we have tie-ups with leading nationalized and private banks to help you secure education loans." },
-               { q: "Is entrance exam coaching provided?", a: "While we specialize in admission consultancy, we provide guidance on which entrance exams to take and recommend top coaching partners." }
-             ].map((faq, i) => (
-               <AnimatedSection key={i} delay={i * 0.1}>
-                 <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm cursor-pointer hover:border-accent/30 transition-colors">
-                    <h4 className="text-lg font-bold text-primary mb-2 flex justify-between items-center">
-                      {faq.q}
-                    </h4>
-                    <p className="text-slate-600 text-sm leading-relaxed">{faq.a}</p>
-                 </div>
-               </AnimatedSection>
-             ))}
+          {(() => {
+            const universities = [
+              {
+                name: "Mahindra University",
+                logo: "/mahindra_uni.png",
+                location: "Hyderabad",
+                ranking: "Emerging Tech University",
+                courses: "Engineering, AI, Data Science",
+                fees: "₹4L – ₹7L / year",
+                placement: "Avg ₹8–10 LPA",
+                facilities: "Innovation Labs, Research Centers",
+              },
+
+              {
+                name: "SRM University",
+                logo: "/logos/srm.png",
+                location: "Chennai",
+                ranking: "Top Private University",
+                courses: "Engineering, Medicine, MBA",
+                fees: "₹4L – ₹8L / year",
+                placement: "Highest ₹52 LPA",
+                facilities: "Global Research Centers",
+              },
+
+              {
+                name: "UPES",
+                logo: "/logos/upes.png",
+                location: "Dehradun",
+                ranking: "NIRF Top 100",
+                courses: "Petroleum, Law, Computer Science",
+                fees: "₹3L – ₹6L / year",
+                placement: "Highest ₹50 LPA",
+                facilities: "Industry Partnerships",
+              },
+
+              {
+                name: "Bennett University",
+                logo: "/logos/bennett.png",
+                location: "Greater Noida",
+                ranking: "Times Group University",
+                courses: "Engineering, AI, Media",
+                fees: "₹3.5L – ₹7L / year",
+                placement: "Highest ₹44 LPA",
+                facilities: "Startup Incubator",
+              },
+
+              {
+                name: "RV University",
+                logo: "/logos/rv.png",
+                location: "Bangalore",
+                ranking: "NAAC A Accredited",
+                courses: "Engineering, Business, Law",
+                fees: "₹2L – ₹5L / year",
+                placement: "Avg ₹7–9 LPA",
+                facilities: "Innovation Labs, Global Exchange",
+              },
+
+              {
+                name: "Alliance University",
+                logo: "/logos/alliance.png",
+                location: "Bangalore",
+                ranking: "Top Business School",
+                courses: "MBA, Engineering, Law",
+                fees: "₹3L – ₹6L / year",
+                placement: "Avg ₹7 LPA",
+                facilities: "Corporate Partnerships",
+              },
+
+              {
+                name: "Uttaranchal University",
+                logo: "/logos/uttaranchal.png",
+                location: "Dehradun",
+                ranking: "NAAC A+",
+                courses: "Law, Engineering, MBA",
+                fees: "₹2L – ₹4L / year",
+                placement: "Avg ₹6 LPA",
+                facilities: "Modern Campus Infrastructure",
+              },
+
+              {
+                name: "KR Mangalam University",
+                logo: "/logos/krmangalam.png",
+                location: "Gurugram",
+                ranking: "Career Focused University",
+                courses: "Engineering, Design, MBA",
+                fees: "₹2.5L – ₹5L / year",
+                placement: "Avg ₹6–7 LPA",
+                facilities: "Modern Infrastructure",
+              },
+
+              {
+                name: "Apeejay Stya University",
+                logo: "/logos/apeejay.png",
+                location: "Gurugram",
+                ranking: "NAAC A Grade",
+                courses: "Engineering, Design, Business",
+                fees: "₹2L – ₹3.5L / year",
+                placement: "Highest ₹52 LPA",
+                facilities: "International Collaborations",
+              },
+
+              {
+                name: "Sharda University",
+                logo: "/logos/sharda.png",
+                location: "Greater Noida",
+                ranking: "Global University",
+                courses: "Engineering, Medicine, MBA",
+                fees: "₹3L – ₹6L / year",
+                placement: "International Placements",
+                facilities: "Students from 80+ Countries",
+              },
+
+              {
+                name: "Noida International University",
+                logo: "/logos/niu.png",
+                location: "Greater Noida",
+                ranking: "Emerging Global University",
+                courses: "Engineering, Medical Sciences, MBA",
+                fees: "₹2.5L – ₹5L / year",
+                placement: "Industry Internships",
+                facilities: "Smart Campus Infrastructure",
+              },
+
+              {
+                name: "Graphic Era University",
+                logo: "/logos/geu.png",
+                location: "Dehradun",
+                ranking: "NAAC A+",
+                courses: "Computer Science, Engineering",
+                fees: "₹2.5L – ₹5L / year",
+                placement: "Highest ₹84 LPA",
+                facilities: "Advanced Research Labs",
+              },
+
+              {
+                name: "Quantum University",
+                logo: "/logos/quantum.png",
+                location: "Roorkee",
+                ranking: "Interdisciplinary University",
+                courses: "Engineering, Applied Sciences",
+                fees: "₹2L – ₹4L / year",
+                placement: "Industry Training Programs",
+                facilities: "Innovation Programs",
+              },
+
+              {
+                name: "DBS Global University",
+                logo: "/logos/dbs.png",
+                location: "Dehradun",
+                ranking: "Modern Business University",
+                courses: "Business, Technology",
+                fees: "₹2L – ₹3.5L / year",
+                placement: "Corporate Placements",
+                facilities: "Industry Partnerships",
+              },
+
+              {
+                name: "Shivalik University",
+                logo: "/logos/shivalik.png",
+                location: "Dehradun",
+                ranking: "Private University",
+                courses: "Engineering, Agriculture, Management",
+                fees: "₹1.5L – ₹3L / year",
+                placement: "Industry Training",
+                facilities: "Large Green Campus",
+              },
+
+              {
+                name: "Himalayan University",
+                logo: "/logos/himalayan.png",
+                location: "Itanagar",
+                ranking: "Private University",
+                courses: "Engineering, Management, Pharmacy",
+                fees: "₹1L – ₹3L / year",
+                placement: "Growing Placements",
+                facilities: "Modern Infrastructure",
+              },
+
+              {
+                name: "BFIT",
+                logo: "/logos/bfit.png",
+                location: "Dehradun",
+                ranking: "Professional Institute",
+                courses: "IT, Management, Hotel Management",
+                fees: "₹1L – ₹2.5L / year",
+                placement: "Industry Internships",
+                facilities: "Skill Development Labs",
+              },
+
+              {
+                name: "RIT Roorkee",
+                logo: "/logos/rit.png",
+                location: "Roorkee",
+                ranking: "Engineering Institute",
+                courses: "Engineering, Management",
+                fees: "₹2L – ₹4L / year",
+                placement: "Industry Training",
+                facilities: "Technology Labs",
+              },
+
+              {
+                name: "Panipat Institute of Technology",
+                logo: "/logos/pit.png",
+                location: "Panipat",
+                ranking: "Engineering Institute",
+                courses: "Engineering, Computer Science",
+                fees: "₹1.5L – ₹3L / year",
+                placement: "Industry Placements",
+                facilities: "Advanced Engineering Labs",
+              },
+            ];
+
+            return (
+              <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+                {universities.map((uni, i) => (
+                  <StaggerItem key={i} className="h-full">
+                    <div
+                      className="group h-full flex flex-col rounded-2xl p-6
+              bg-white/5 backdrop-blur-xl
+              border border-white/10
+              shadow-[0_10px_40px_rgba(0,0,0,0.6)]
+              hover:border-emerald-400/40
+              hover:shadow-[0_15px_60px_rgba(16,185,129,0.25)]
+              transition-all duration-300"
+                    >
+                      {/* Header */}
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className="w-20 h-20 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center overflow-hidden">
+                          <img
+                            src={uni.logo}
+                            alt={uni.name}
+                            className="w-full h-full object-cover "
+                          />
+                        </div>
+
+                        <div>
+                          <h4 className="text-lg font-semibold text-white group-hover:text-emerald-300 transition">
+                            {uni.name}
+                          </h4>
+                          <p className="text-sm text-gray-400">
+                            {uni.location}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Info Grid */}
+                      <div className="grid grid-cols-2 gap-3 text-sm flex-grow">
+                        <div className="bg-white/5 border border-white/10 rounded-lg p-3">
+                          <p className="text-gray-400 text-xs">Ranking</p>
+                          <p className="text-white font-medium">
+                            {uni.ranking}
+                          </p>
+                        </div>
+
+                        <div className="bg-white/5 border border-white/10 rounded-lg p-3">
+                          <p className="text-gray-400 text-xs">Fees</p>
+                          <p className="text-white font-medium">{uni.fees}</p>
+                        </div>
+
+                        <div className="bg-white/5 border border-white/10 rounded-lg p-3">
+                          <p className="text-gray-400 text-xs">Courses</p>
+                          <p className="text-white font-medium">
+                            {uni.courses}
+                          </p>
+                        </div>
+
+                        <div className="bg-white/5 border border-white/10 rounded-lg p-3">
+                          <p className="text-gray-400 text-xs">Placement</p>
+                          <p className="text-white font-medium">
+                            {uni.placement}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Footer */}
+                      <div className="mt-auto pt-6">
+                        <p className="text-sm text-gray-400 mb-4">
+                          <span className="text-gray-300 font-medium">
+                            Facilities:
+                          </span>{" "}
+                          {uni.facilities}
+                        </p>
+
+                        <div className="flex gap-3">
+
+  <Link href="/apply" className="flex-1">
+    <button className="w-full bg-emerald-500 text-white py-2 rounded-lg text-sm font-medium hover:bg-emerald-600 transition">
+      Apply
+    </button>
+  </Link>
+
+  <Link href="/view-more" className="flex-1">
+    <button className="w-full border border-white/20 text-gray-200 py-2 rounded-lg text-sm hover:bg-white/10 transition">
+      View More
+    </button>
+  </Link>
+
+</div>
+                      </div>
+                    </div>
+                  </StaggerItem>
+                ))}
+              </StaggerChildren>
+            );
+          })()}
+        </div>
+      </section>
+
+      {/* Admission Process (Timeline) */}
+
+      <section className="py-24 relative overflow-hidden">
+        {/* Emerald Background */}
+        <div className="absolute inset-0 -z-10 bg-black">
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(16,185,129,0.25), transparent 70%)",
+            }}
+          />
+        </div>
+
+        <div className="container mx-auto px-6 md:px-12">
+          {/* Section Header */}
+          <AnimatedSection className="text-center max-w-4xl mx-auto mb-20">
+            <div
+              className="inline-flex items-center gap-2 px-4 py-1.5
+  bg-emerald-500/10 border border-emerald-400/30
+  rounded-full text-md font-semibold text-emerald-400 mb-5"
+            >
+              <Workflow className="w-5 h-5" />
+              How It Works
+            </div>
+
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Simplified Admission Process
+            </h3>
+
+            <p className="text-gray-400 text-lg leading-relaxed max-w-4xl mx-auto">
+              Applying to universities can sometimes feel confusing and
+              stressful. We make the process simple by guiding you at every
+              step, starting from evaluating your academic profile and helping
+              you secure your admission to the right university.
+            </p>
+          </AnimatedSection>
+
+          {/* Steps */}
+          <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 items-stretch">
+            {[
+              {
+                step: "01",
+                title: "Profile Evaluation",
+                points: [
+                  "Analyze academic background",
+                  "Identify career goals",
+                  "Evaluate eligibility for universities",
+                ],
+              },
+              {
+                step: "02",
+                title: "University Selection",
+                points: [
+                  "Shortlist universities",
+                  "Match budget and profile",
+                  "Identify best programs",
+                ],
+              },
+              {
+                step: "03",
+                title: "Application & Documentation",
+                points: [
+                  "Prepare SOP and documents",
+                  "Complete application forms",
+                  "Submit strong applications",
+                ],
+              },
+              {
+                step: "04",
+                title: "Admission & Enrollment",
+                points: [
+                  "Receive admission offer",
+                  "Complete enrollment process",
+                  "Secure your university seat",
+                ],
+              },
+            ].map((item, i) => (
+              <AnimatedSection key={i} delay={i * 0.1} className="h-full">
+                <div
+                  className="group h-full flex flex-col rounded-2xl p-8
+            bg-white/5 backdrop-blur-xl
+            border border-white/10
+            shadow-[0_10px_35px_rgba(0,0,0,0.5)]
+            hover:border-emerald-400/40
+            hover:shadow-[0_15px_50px_rgba(16,185,129,0.25)]
+            transition-all duration-300"
+                >
+                  {/* Step Number */}
+                  <div
+                    className="w-14 h-14 rounded-full
+              bg-emerald-500/20 text-emerald-400 font-semibold text-lg
+              flex items-center justify-center mb-6
+              border border-emerald-400/30
+              group-hover:bg-emerald-500 group-hover:text-white transition"
+                  >
+                    {item.step}
+                  </div>
+
+                  {/* Title */}
+                  <h4 className="text-lg font-semibold text-white mb-5">
+                    {item.title}
+                  </h4>
+
+                  {/* Bullet Points */}
+                  <ul className="space-y-3 text-left flex-grow">
+                    {item.points.map((point, index) => (
+                      <li
+                        key={index}
+                        className="flex items-start gap-2 text-gray-300 text-sm"
+                      >
+                        <CheckCircle className="w-4 h-4 text-emerald-400 mt-[2px]" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </AnimatedSection>
+            ))}
           </div>
         </div>
       </section>

@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 import AnimatedSection, {
   StaggerChildren,
@@ -19,7 +20,6 @@ import {
   Stethoscope,
   Layers3,
 } from "lucide-react";
-import Image from "next/image";
 
 export default function About() {
   return (
@@ -67,10 +67,10 @@ export default function About() {
                          gap-6 md:gap-8 max-w-7xl mx-auto px-4"
             >
               {[
-                { value: "10+ Years", label: "Industry Experience" },
-                { value: "Hundreds+", label: "Students Guided" },
-                { value: "3 Platforms", label: "Education Ecosystem" },
-                { value: "India & CIS", label: "Expansion Vision" },
+                { value: "15+ Years", label: "Industry Experience" },
+                { value: "1000+", label: "Students Guided for MBBS" },
+                { value: "25+", label: "Medical University Partners" },
+                { value: "India & International", label: "MBBS Admission Services" },
               ].map((item, i) => (
                 <div
                   key={i}
