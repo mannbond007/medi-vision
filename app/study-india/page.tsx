@@ -185,7 +185,7 @@ export default function StudyIndia() {
 
               {
                 name: "SRM University",
-                logo: "/logos/srm.png",
+                logo: "/srm_uni.png",
                 location: "Chennai",
                 ranking: "Top Private University",
                 courses: "Engineering, Medicine, MBA",
@@ -196,7 +196,7 @@ export default function StudyIndia() {
 
               {
                 name: "UPES",
-                logo: "/logos/upes.png",
+                logo: "/upes_uni.jpg",
                 location: "Dehradun",
                 ranking: "NIRF Top 100",
                 courses: "Petroleum, Law, Computer Science",
@@ -207,7 +207,7 @@ export default function StudyIndia() {
 
               {
                 name: "Bennett University",
-                logo: "/logos/bennett.png",
+                logo: "/bennett_uni.jpg",
                 location: "Greater Noida",
                 ranking: "Times Group University",
                 courses: "Engineering, AI, Media",
@@ -218,7 +218,7 @@ export default function StudyIndia() {
 
               {
                 name: "RV University",
-                logo: "/logos/rv.png",
+                logo: "/rv_uni.jpg",
                 location: "Bangalore",
                 ranking: "NAAC A Accredited",
                 courses: "Engineering, Business, Law",
@@ -229,7 +229,7 @@ export default function StudyIndia() {
 
               {
                 name: "Alliance University",
-                logo: "/logos/alliance.png",
+                logo: "/alliance_uni.jpg",
                 location: "Bangalore",
                 ranking: "Top Business School",
                 courses: "MBA, Engineering, Law",
@@ -240,7 +240,7 @@ export default function StudyIndia() {
 
               {
                 name: "Uttaranchal University",
-                logo: "/logos/uttaranchal.png",
+                logo: "/uit_uni.jpg",
                 location: "Dehradun",
                 ranking: "NAAC A+",
                 courses: "Law, Engineering, MBA",
@@ -251,7 +251,7 @@ export default function StudyIndia() {
 
               {
                 name: "KR Mangalam University",
-                logo: "/logos/krmangalam.png",
+                logo: "/kr_uni.jpg",
                 location: "Gurugram",
                 ranking: "Career Focused University",
                 courses: "Engineering, Design, MBA",
@@ -262,7 +262,7 @@ export default function StudyIndia() {
 
               {
                 name: "Apeejay Stya University",
-                logo: "/logos/apeejay.png",
+                logo: "/apeejay_uni.jpg",
                 location: "Gurugram",
                 ranking: "NAAC A Grade",
                 courses: "Engineering, Design, Business",
@@ -273,7 +273,7 @@ export default function StudyIndia() {
 
               {
                 name: "Sharda University",
-                logo: "/logos/sharda.png",
+                logo: "/sharda_uni.png",
                 location: "Greater Noida",
                 ranking: "Global University",
                 courses: "Engineering, Medicine, MBA",
@@ -284,7 +284,7 @@ export default function StudyIndia() {
 
               {
                 name: "Noida International University",
-                logo: "/logos/niu.png",
+                logo: "/niu_uni.png",
                 location: "Greater Noida",
                 ranking: "Emerging Global University",
                 courses: "Engineering, Medical Sciences, MBA",
@@ -295,7 +295,7 @@ export default function StudyIndia() {
 
               {
                 name: "Graphic Era University",
-                logo: "/logos/geu.png",
+                logo: "/graphic_uni.png",
                 location: "Dehradun",
                 ranking: "NAAC A+",
                 courses: "Computer Science, Engineering",
@@ -306,7 +306,7 @@ export default function StudyIndia() {
 
               {
                 name: "Quantum University",
-                logo: "/logos/quantum.png",
+                logo: "/qu_uni.png",
                 location: "Roorkee",
                 ranking: "Interdisciplinary University",
                 courses: "Engineering, Applied Sciences",
@@ -317,7 +317,7 @@ export default function StudyIndia() {
 
               {
                 name: "DBS Global University",
-                logo: "/logos/dbs.png",
+                logo: "/dbs_uni.png",
                 location: "Dehradun",
                 ranking: "Modern Business University",
                 courses: "Business, Technology",
@@ -328,7 +328,7 @@ export default function StudyIndia() {
 
               {
                 name: "Shivalik University",
-                logo: "/logos/shivalik.png",
+                logo: "/shivalik_uni.png",
                 location: "Dehradun",
                 ranking: "Private University",
                 courses: "Engineering, Agriculture, Management",
@@ -339,7 +339,7 @@ export default function StudyIndia() {
 
               {
                 name: "Himalayan University",
-                logo: "/logos/himalayan.png",
+                logo: "/himalyan_uni.png",
                 location: "Itanagar",
                 ranking: "Private University",
                 courses: "Engineering, Management, Pharmacy",
@@ -350,7 +350,7 @@ export default function StudyIndia() {
 
               {
                 name: "BFIT",
-                logo: "/logos/bfit.png",
+                logo: "/BFIT_uni.png",
                 location: "Dehradun",
                 ranking: "Professional Institute",
                 courses: "IT, Management, Hotel Management",
@@ -361,7 +361,7 @@ export default function StudyIndia() {
 
               {
                 name: "RIT Roorkee",
-                logo: "/logos/rit.png",
+                logo: "/RIT_uni.png",
                 location: "Roorkee",
                 ranking: "Engineering Institute",
                 courses: "Engineering, Management",
@@ -372,7 +372,7 @@ export default function StudyIndia() {
 
               {
                 name: "Panipat Institute of Technology",
-                logo: "/logos/pit.png",
+                logo: "/PIET_uni.png",
                 location: "Panipat",
                 ranking: "Engineering Institute",
                 courses: "Engineering, Computer Science",
