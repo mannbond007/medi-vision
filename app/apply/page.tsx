@@ -216,11 +216,11 @@ export default function ApplySection() {
 
                 <div className="mt-10 border-t border-white/20 pt-4 text-center">
                   <p className="text-xs text-gray-400 tracking-wide">
-                    © {new Date().getFullYear()}
-                    <span className="text-gray-300 font-medium ml-1">
-                      Medi Vision Career Pvt Ltd
-                    </span>
-                  </p>
+  © {new Date().getFullYear()}
+  <span className="font-semibold ml-1 text-[15px] bg-gradient-to-r from-emerald-400 to-emerald-200 bg-clip-text text-transparent">
+    Medi Vision Career Pvt Ltd
+  </span>
+</p>
                 </div>
               </div>
             </form>
