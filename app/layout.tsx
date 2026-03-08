@@ -25,6 +25,7 @@ export const metadata: Metadata = {
     siteName: "Medi Vision",
     locale: "en_IN",
     type: "website",
+    
   },
 };
 
