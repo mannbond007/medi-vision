@@ -16,119 +16,145 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/90 backdrop-blur-xl shadow-sm py-3 border-b border-slate-100" : "bg-transparent py-6"
+      className={`fixed top-0 left-0 right-0 z-50 h-[72px] transition-all duration-300 border-b ${
+        scrolled
+          ? "bg-white/80 backdrop-blur-xl border-slate-200 shadow-sm"
+          : "bg-transparent border-transparent"
       }`}
     >
-      <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
-        {/* Logo */}
+      <div className="container mx-auto px-6 md:px-12 h-full flex justify-between items-center">
+        
+        {/* LOGO */}
         <Link href="/" className="flex items-center gap-3 group">
-          <motion.div 
-            whileHover={{ scale: 1.05, rotate: 5 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-blue-800 flex items-center justify-center shadow-md relative overflow-hidden"
+          <motion.div
+            whileHover={{ scale: 1.08, rotate: 5 }}
+            transition={{ type: "spring", stiffness: 400 }}
+            className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-blue-800 flex items-center justify-center shadow-md"
           >
-            <div className="absolute inset-0 bg-accent opacity-20 group-hover:opacity-40 transition-opacity" />
-            <span className="text-white font-black text-xl leading-none z-10">M</span>
+            <span className="text-white font-black text-lg">M</span>
           </motion.div>
-          <div className="flex flex-col">
-            <span className="text-xl md:text-2xl font-black text-primary leading-none tracking-tight">Medi Vision</span>
-            <span className="text-[10px] uppercase font-bold text-accent tracking-widest mt-0.5">Career Pvt. Ltd.</span>
+
+          <div className="flex flex-col leading-tight">
+            <span className="text-xl font-black text-primary tracking-tight">
+              Medi Vision
+            </span>
+            <span className="text-[10px] uppercase font-semibold text-accent tracking-widest">
+              Career Pvt Ltd
+            </span>
           </div>
         </Link>
 
-        {/* Desktop Links */}
+        {/* DESKTOP NAV */}
         <div className="hidden lg:flex items-center gap-8">
           {ROUTES.map((route) => {
             const isActive = pathname === route.path;
+
             return (
               <Link
                 key={route.path}
                 href={route.path}
-                className={`relative text-sm font-semibold transition-colors py-2 ${
-                  isActive ? "text-accent" : "text-slate-600 hover:text-primary"
+                className={`relative text-sm font-semibold transition-colors ${
+                  isActive
+                    ? "text-accent"
+                    : "text-slate-600 hover:text-primary"
                 }`}
               >
                 {route.name}
+
                 {isActive && (
                   <motion.div
-                    layoutId="navbar-underline"
-                    className="absolute left-0 right-0 bottom-0 h-0.5 bg-accent rounded-full"
-                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    layoutId="nav-underline"
+                    className="absolute -bottom-1 left-0 right-0 h-[2px] bg-accent rounded"
+                    transition={{
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 30,
+                    }}
                   />
                 )}
               </Link>
             );
           })}
+
+          {/* CTA */}
           <Link
             href="/contact"
-            className="bg-primary text-white px-6 py-2.5 rounded-xl text-sm font-bold hover:bg-blue-900 transition-all hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 relative overflow-hidden group"
+            className="bg-primary text-white px-6 py-2.5 rounded-xl text-sm font-semibold hover:bg-blue-900 transition-all hover:shadow-lg hover:-translate-y-[1px]"
           >
-            <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-            <span className="relative z-10">Get Consulting</span>
+            Get Consulting
           </Link>
         </div>
 
-        {/* Mobile Toggle */}
+        {/* MOBILE MENU BUTTON */}
         <button
-          className="lg:hidden text-primary p-2 hover:bg-slate-50 rounded-lg transition-colors"
           onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
+          className="lg:hidden p-2 rounded-lg hover:bg-slate-100"
+          aria-expanded={isOpen}
         >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
+          {isOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* MOBILE DRAWER */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="lg:hidden bg-white border-t border-slate-100 overflow-hidden shadow-xl"
-          >
-            <div className="flex flex-col px-6 py-6 space-y-2">
-              {ROUTES.map((route, i) => (
-                <motion.div
-                  key={route.path}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.05, duration: 0.3 }}
-                >
+          <>
+            {/* overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.4 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsOpen(false)}
+              className="fixed inset-0 bg-black lg:hidden"
+            />
+
+            {/* drawer */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 25 }}
+              className="fixed right-0 top-0 h-full w-[280px] bg-white shadow-xl lg:hidden p-6"
+            >
+              <div className="flex justify-end mb-8">
+                <button onClick={() => setIsOpen(false)}>
+                  <X size={26} />
+                </button>
+              </div>
+
+              <div className="flex flex-col gap-6">
+                {ROUTES.map((route) => (
                   <Link
+                    key={route.path}
                     href={route.path}
                     onClick={() => setIsOpen(false)}
-                    className={`block py-3 text-lg font-bold border-b border-slate-50 ${
-                      pathname === route.path ? "text-accent" : "text-slate-700"
+                    className={`text-lg font-semibold ${
+                      pathname === route.path
+                        ? "text-accent"
+                        : "text-slate-700"
                     }`}
                   >
                     {route.name}
                   </Link>
-                </motion.div>
-              ))}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-              >
+                ))}
+
                 <Link
                   href="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="block bg-primary text-white px-5 py-4 rounded-xl text-center font-bold mt-6 shadow-md"
+                  className="bg-primary text-white px-5 py-3 rounded-lg text-center font-semibold mt-4"
                 >
                   Get Consulting
                 </Link>
-              </motion.div>
-            </div>
-          </motion.div>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </nav>

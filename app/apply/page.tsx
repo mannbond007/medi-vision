@@ -68,7 +68,8 @@ export default function ApplySection() {
             variants={item}
             className="text-gray-400 mt-6 w-full leading-relaxed text-sm md:text-base"
           >
-           Our experts guide you from choosing the right university to securing your admission.
+            Our experts guide you from choosing the right university to securing
+            your admission.
           </motion.p>
 
           {/* Bento Grid */}
@@ -199,7 +200,7 @@ export default function ApplySection() {
               <div className="md:col-span-2">
                 <label className="text-sm text-white mb-2 block">Message</label>
                 <textarea
-                  rows="6"
+                  rows={6}
                   placeholder="Tell us about your preferred university..."
                   className="w-full bg-white/5 border border-white/20 rounded-lg px-4 py-3 text-white placeholder:text-gray-400 focus:outline-none focus:border-emerald-500 resize-none"
                 />
@@ -216,11 +217,11 @@ export default function ApplySection() {
 
                 <div className="mt-10 border-t border-white/20 pt-4 text-center">
                   <p className="text-xs text-gray-400 tracking-wide">
-  © {new Date().getFullYear()}
-  <span className="font-semibold ml-1 text-[15px] bg-gradient-to-r from-emerald-400 to-emerald-200 bg-clip-text text-transparent">
-    Medi Vision Career Pvt Ltd
-  </span>
-</p>
+                    © {new Date().getFullYear()}
+                    <span className="font-semibold ml-1 text-[15px] bg-gradient-to-r from-emerald-400 to-emerald-200 bg-clip-text text-transparent">
+                      Medi Vision Career Pvt Ltd
+                    </span>
+                  </p>
                 </div>
               </div>
             </form>
