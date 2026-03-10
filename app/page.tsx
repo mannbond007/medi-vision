@@ -85,7 +85,7 @@ export default function Home() {
               <div className="mb-6 inline-flex items-center justify-center w-14 h-14 rounded-full bg-accent/10 border border-accent/20 shadow-sm">
                 <Award size={24} className="text-accent" />
               </div>
-              <div className="text-4xl font-bold text-primary mb-2">98%</div>
+              <div className="text-4xl font-bold text-primary mb-2">100%</div>
               <h3 className="text-lg font-semibold mb-4">Visa Success Rate</h3>
               <p className="text-sm text-slate-600">
                 High approval rate through structured documentation and expert
