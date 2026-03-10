@@ -529,9 +529,9 @@ export default function StudyAbroad() {
                         {item.icon}
                       </div>
 
-                      <h3 className="text-lg font-semibold text-gray-100 tracking-tight leading-snug transition-colors group-hover:text-emerald-400">
-  {item.title}
-</h3>
+                      <h3 className="text-xl font-semibold text-gray-100 tracking-tight leading-snug transition-colors group-hover:text-emerald-400">
+                        {item.title}
+                      </h3>
                     </div>
 
                     {/* BACK */}
