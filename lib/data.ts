@@ -1,43 +1,131 @@
+import { Award, Building2, Compass, FileCheck, Globe, GraduationCap, PenTool, Plane, Users } from "lucide-react";
+
 export const ROUTES = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about" },
   { name: "Study in India", path: "/study-india" },
   { name: "Study Abroad", path: "/study-abroad" },
   { name: "Services", path: "/services" },
-  { name: "Universities", path: "/universities" },
+  // { name: "Universities", path: "/universities" },
   { name: "Contact", path: "/contact" },
 ];
 
 export const SERVICES = [
   {
     title: "Career Counseling",
-    description: "Expert guidance to choose the right career path tailored to your strengths.",
-    icon: "compass"
+    icon: Compass,
+    highlight: "Personalized Guidance",
+    description:
+      "One-on-one counseling sessions to identify the right career path based on your academic background, interests, and future goals.",
+    features: [
+      "Career roadmap planning",
+      "Course and specialization guidance",
+      "Skill and aptitude assessment",
+    ],
   },
+
   {
     title: "University Selection",
-    description: "Shortlisting the best universities in India and abroad for your profile.",
-    icon: "building"
+    icon: Building2,
+    highlight: "Top Universities",
+    description:
+      "Shortlisting the most suitable universities and programs worldwide based on your academic profile and budget.",
+    features: [
+      "University comparison",
+      "Admission probability analysis",
+      "Program recommendations",
+    ],
   },
+
   {
     title: "Application Assistance",
-    description: "End-to-end support in assembling and submitting flawless applications.",
-    icon: "file-text"
+    icon: FileCheck,
+    highlight: "Complete Support",
+    description:
+      "End-to-end assistance in preparing, reviewing, and submitting error-free university applications.",
+    features: [
+      "Application form support",
+      "Document preparation",
+      "Submission tracking",
+    ],
   },
+
   {
     title: "Visa Processing",
-    description: "Complete guidance on visa interviews, documentation, and filing.",
-    icon: "globe"
+    icon: Globe,
+    highlight: "Visa Success",
+    description:
+      "Expert guidance on student visa documentation, interview preparation, and submission.",
+    features: [
+      "Visa documentation checklist",
+      "Mock visa interviews",
+      "Application filing support",
+    ],
   },
+
   {
     title: "Scholarship Guidance",
-    description: "Assistance in finding and applying for suitable financial aid.",
-    icon: "award"
+    icon: Award,
+    highlight: "Financial Support",
+    description:
+      "Helping students secure scholarships, grants, and financial aid opportunities.",
+    features: [
+      "Scholarship search",
+      "Eligibility evaluation",
+      "Application guidance",
+    ],
   },
+
   {
     title: "SOP & LOR Assistance",
-    description: "Structuring compelling Statements of Purpose and Recommendation Letters.",
-    icon: "pen-tool"
+    icon: PenTool,
+    highlight: "Strong Applications",
+    description:
+      "Crafting impactful Statements of Purpose and Letters of Recommendation that stand out.",
+    features: [
+      "Professional SOP writing",
+      "LOR structure guidance",
+      "Application storytelling",
+    ],
+  },
+
+  {
+    title: "Pre-Departure Support",
+    icon: Plane,
+    highlight: "Travel Preparation",
+    description:
+      "Complete support before departure including accommodation, travel planning, and cultural orientation.",
+    features: [
+      "Accommodation assistance",
+      "Travel checklist",
+      "Student orientation",
+    ],
+  },
+
+  {
+    title: "Alumni & Networking",
+    icon: Users,
+    highlight: "Global Community",
+    description:
+      "Connect with alumni and student communities abroad to build strong networks.",
+    features: [
+      "Student mentorship",
+      "Alumni guidance",
+      "Community support",
+    ],
+  },
+
+  {
+    title: "Test Preparation",
+    icon: GraduationCap,
+    highlight: "Exam Readiness",
+    description:
+      "Guidance and preparation strategies for IELTS, TOEFL, GRE, GMAT, and other entrance exams.",
+    features: [
+      "Study materials",
+      "Mock tests",
+      "Exam strategies",
+    ],
   },
 ];
 
