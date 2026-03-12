@@ -93,70 +93,71 @@ export default function Navbar() {
         </div>
 
         {/* MOBILE MENU BUTTON */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden p-2 rounded-lg hover:bg-slate-100"
-          aria-expanded={isOpen}
-        >
-          {isOpen ? <X size={26} /> : <Menu size={26} />}
-        </button>
-      </div>
+<button
+  onClick={() => setIsOpen(!isOpen)}
+  className="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition"
+  aria-expanded={isOpen}
+>
+  {isOpen ? <X size={26} /> : <Menu size={26} />}
+</button>
+</div>
 
-      {/* MOBILE DRAWER */}
-      <AnimatePresence>
-        {isOpen && (
-          <>
-            {/* overlay */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.4 }}
-              exit={{ opacity: 0 }}
+{/* MOBILE DRAWER */}
+<AnimatePresence>
+  {isOpen && (
+    <>
+      {/* overlay */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.35 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.18 }}
+        onClick={() => setIsOpen(false)}
+        className="fixed inset-0 bg-black/40 backdrop-blur-sm lg:hidden"
+      />
+
+      {/* drawer */}
+      <motion.div
+        initial={{ x: "100%" }}
+        animate={{ x: 0 }}
+        exit={{ x: "100%" }}
+        transition={{ duration: 0.22, ease: "easeOut" }}
+        className="fixed right-0 top-0 h-full w-[280px] bg-white shadow-2xl lg:hidden p-6"
+      >
+        <div className="flex justify-end mb-8">
+          <button onClick={() => setIsOpen(false)}>
+            <X size={26} />
+          </button>
+        </div>
+
+        <div className="flex flex-col gap-6">
+          {ROUTES.map((route) => (
+            <Link
+              key={route.path}
+              href={route.path}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 bg-black lg:hidden"
-            />
-
-            {/* drawer */}
-            <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 25 }}
-              className="fixed right-0 top-0 h-full w-[280px] bg-white shadow-xl lg:hidden p-6"
+              className={`text-lg font-semibold transition ${
+                pathname === route.path
+                  ? "text-accent"
+                  : "text-slate-700 hover:text-primary"
+              }`}
             >
-              <div className="flex justify-end mb-8">
-                <button onClick={() => setIsOpen(false)}>
-                  <X size={26} />
-                </button>
-              </div>
+              {route.name}
+            </Link>
+          ))}
 
-              <div className="flex flex-col gap-6">
-                {ROUTES.map((route) => (
-                  <Link
-                    key={route.path}
-                    href={route.path}
-                    onClick={() => setIsOpen(false)}
-                    className={`text-lg font-semibold ${
-                      pathname === route.path
-                        ? "text-accent"
-                        : "text-slate-700"
-                    }`}
-                  >
-                    {route.name}
-                  </Link>
-                ))}
-
-                <Link
-                  href="/contact"
-                  onClick={() => setIsOpen(false)}
-                  className="bg-primary text-white px-5 py-3 rounded-lg text-center font-semibold mt-4"
-                >
-                  Get Consulting
-                </Link>
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+          <Link
+            href="/contact"
+            onClick={() => setIsOpen(false)}
+            className="bg-primary text-white px-5 py-3 rounded-lg text-center font-semibold mt-4 hover:shadow-md transition"
+          >
+            Get Consulting
+          </Link>
+        </div>
+      </motion.div>
+    </>
+  )}
+</AnimatePresence>
     </nav>
   );
 }
