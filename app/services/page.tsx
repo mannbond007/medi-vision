@@ -239,135 +239,145 @@ export default function ServicesPage() {
       </section>
 
       {/* cta */}
-<section className="relative w-full py-36 overflow-hidden">
-
-  {/* Emerald Aurora Background */}
-  <div
-    className="absolute inset-0 -z-10"
-    style={{
-      background: `
+      <section className="relative w-full py-36 overflow-hidden">
+        {/* Emerald Aurora Background */}
+        <div
+          className="absolute inset-0 -z-10"
+          style={{
+            background: `
         radial-gradient(120% 120% at 50% 0%, rgba(34,197,94,0.25) 0%, transparent 60%),
         radial-gradient(100% 80% at 10% 20%, rgba(34,197,94,0.15), transparent 70%),
         radial-gradient(100% 80% at 90% 30%, rgba(34,197,94,0.12), transparent 70%),
         #000000
       `,
-    }}
-  />
+          }}
+        />
 
-  <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-24">
+          {/* Heading */}
+          <div className="text-center max-w-3xl mx-auto">
+            <h2 className="text-4xl font-semibold text-white">
+              Talk With Our Experts
+            </h2>
 
-    <div className="mt-16 flex flex-wrap items-center justify-center gap-10">
-
-      {/* Card 1 */}
-      <div className="group text-sm text-gray-400 w-80 divide-y divide-white/10 border border-white/10 rounded-2xl bg-black/40 backdrop-blur-xl hover:border-emerald-400/40 transition">
-
-        <div className="flex items-start justify-between p-5">
-          <div>
-            <div className="flex items-center space-x-2">
-              <h2 className="text-lg text-white">James Washington</h2>
-              <p className="bg-emerald-500/20 px-2 py-0.5 rounded-full text-xs text-emerald-400 border border-emerald-500/30">
-                Admin
-              </p>
-            </div>
-            <p className="text-gray-400">Content Marketing</p>
+            <p className="mt-4 text-gray-400 text-lg">
+              Our team is here to guide you through every step of your admission
+              journey. Contact our experts and get personalized support.
+            </p>
           </div>
 
-          <img
-            className="h-11 w-11 rounded-full ring-2 ring-emerald-500/30"
-            src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=100"
-            alt=""
-          />
-        </div>
+          {/* Cards */}
+          <div className="mt-20 flex items-stretch justify-center gap-10">
+            {/* Card 1 */}
+            <div className="group text-gray-400 w-[360px] divide-y divide-white/10 border border-white/10 rounded-2xl bg-black/40 backdrop-blur-xl hover:border-emerald-400/50 hover:scale-105 transition duration-300">
+              <div className="flex items-start justify-between p-7">
+                <div>
+                  <div className="flex items-center space-x-2">
+                    <h2 className="text-xl text-white font-medium">
+                      James Washington
+                    </h2>
+                    <p className="bg-emerald-500/20 px-2 py-0.5 rounded-full text-xs text-emerald-400 border border-emerald-500/30">
+                      Admin
+                    </p>
+                  </div>
 
-        <div className="flex items-center divide-x divide-white/10">
+                  <p className="text-gray-400 mt-1 text-sm">
+                    Content Marketing
+                  </p>
+                </div>
 
-          <button className="flex items-center justify-center gap-2 w-1/2 py-3 hover:bg-white/5 hover:text-white transition">
-            Send Email
-          </button>
+                <img
+                  className="h-14 w-14 rounded-full ring-2 ring-emerald-500/30"
+                  src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=100"
+                  alt="James Washington"
+                />
+              </div>
 
-          <button className="flex items-center justify-center gap-2 w-1/2 py-3 hover:bg-white/5 hover:text-white transition">
-            Call Now
-          </button>
+              <div className="flex items-center divide-x divide-white/10">
+                <a
+                  href="mailto:medivisoncareerpvtltd@gmail.com"
+                  className="flex items-center justify-center gap-2 w-1/2 py-4 hover:bg-white/5 hover:text-white transition"
+                >
+                  Send Email
+                </a>
 
-        </div>
-
-      </div>
-
-      {/* Card 2 */}
-      <div className="group text-sm text-gray-400 w-80 divide-y divide-white/10 border border-white/10 rounded-2xl bg-black/40 backdrop-blur-xl hover:border-emerald-400/40 transition">
-
-        <div className="flex items-start justify-between p-5">
-          <div>
-            <div className="flex items-center space-x-2">
-              <h2 className="text-lg text-white">Richard Nelson</h2>
-              <p className="bg-emerald-500/20 px-2 py-0.5 rounded-full text-xs text-emerald-400 border border-emerald-500/30">
-                Admin
-              </p>
+                <a
+                  href="tel:+91 8881966002"
+                  className="flex items-center justify-center gap-2 w-1/2 py-4 hover:bg-white/5 hover:text-white transition"
+                >
+                  Call Now
+                </a>
+              </div>
             </div>
-            <p className="text-gray-400">Content Writer</p>
-          </div>
 
-          <img
-            className="h-11 w-11 rounded-full ring-2 ring-emerald-500/30"
-            src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=100"
-            alt=""
-          />
-        </div>
+            {/* Card 2 */}
+            <div className="group text-gray-400 w-[360px] divide-y divide-white/10 border border-white/10 rounded-2xl bg-black/40 backdrop-blur-xl hover:border-emerald-400/50 hover:scale-105 transition duration-300">
+              <div className="flex items-start justify-between p-7">
+                <div>
+                  <div className="flex items-center space-x-2">
+                    <h2 className="text-xl text-white font-medium">
+                      Richard Nelson
+                    </h2>
+                    <p className="bg-emerald-500/20 px-2 py-0.5 rounded-full text-xs text-emerald-400 border border-emerald-500/30">
+                      Admin
+                    </p>
+                  </div>
 
-        <div className="flex items-center divide-x divide-white/10">
+                  <p className="text-gray-400 mt-1 text-sm">Content Writer</p>
+                </div>
 
-          <button className="flex items-center justify-center gap-2 w-1/2 py-3 hover:bg-white/5 hover:text-white transition">
-            Send Email
-          </button>
+                <img
+                  className="h-14 w-14 rounded-full ring-2 ring-emerald-500/30"
+                  src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=100"
+                  alt="Richard Nelson"
+                />
+              </div>
 
-          <button className="flex items-center justify-center gap-2 w-1/2 py-3 hover:bg-white/5 hover:text-white transition">
-            Call Now
-          </button>
-
-        </div>
-
-      </div>
-
-      {/* Card 3 */}
-      <div className="group text-sm text-gray-400 w-80 divide-y divide-white/10 border border-white/10 rounded-2xl bg-black/40 backdrop-blur-xl hover:border-emerald-400/40 transition">
-
-        <div className="flex items-start justify-between p-5">
-          <div>
-            <div className="flex items-center space-x-2">
-              <h2 className="text-lg text-white">Donald Jackman</h2>
-              <p className="bg-emerald-500/20 px-2 py-0.5 rounded-full text-xs text-emerald-400 border border-emerald-500/30">
-                Admin
-              </p>
+              <div className="flex items-center divide-x divide-white/10">
+                <button className="flex items-center justify-center gap-2 w-1/2 py-4 hover:bg-white/5 hover:text-white transition">
+                  Send Email
+                </button>
+                <button className="flex items-center justify-center gap-2 w-1/2 py-4 hover:bg-white/5 hover:text-white transition">
+                  Call Now
+                </button>
+              </div>
             </div>
-            <p className="text-gray-400">Content Creator</p>
+
+            {/* Card 3 */}
+            <div className="group text-gray-400 w-[360px] divide-y divide-white/10 border border-white/10 rounded-2xl bg-black/40 backdrop-blur-xl hover:border-emerald-400/50 hover:scale-105 transition duration-300">
+              <div className="flex items-start justify-between p-7">
+                <div>
+                  <div className="flex items-center space-x-2">
+                    <h2 className="text-xl text-white font-medium">
+                      Donald Jackman
+                    </h2>
+                    <p className="bg-emerald-500/20 px-2 py-0.5 rounded-full text-xs text-emerald-400 border border-emerald-500/30">
+                      Admin
+                    </p>
+                  </div>
+
+                  <p className="text-gray-400 mt-1 text-sm">Content Creator</p>
+                </div>
+
+                <img
+                  className="h-14 w-14 rounded-full ring-2 ring-emerald-500/30"
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100"
+                  alt="Donald Jackman"
+                />
+              </div>
+
+              <div className="flex items-center divide-x divide-white/10">
+                <button className="flex items-center justify-center gap-2 w-1/2 py-4 hover:bg-white/5 hover:text-white transition">
+                  Send Email
+                </button>
+                <button className="flex items-center justify-center gap-2 w-1/2 py-4 hover:bg-white/5 hover:text-white transition">
+                  Call Now
+                </button>
+              </div>
+            </div>
           </div>
-
-          <img
-            className="h-11 w-11 rounded-full ring-2 ring-emerald-500/30"
-            src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100"
-            alt=""
-          />
         </div>
-
-        <div className="flex items-center divide-x divide-white/10">
-
-          <button className="flex items-center justify-center gap-2 w-1/2 py-3 hover:bg-white/5 hover:text-white transition">
-            Send Email
-          </button>
-
-          <button className="flex items-center justify-center gap-2 w-1/2 py-3 hover:bg-white/5 hover:text-white transition">
-            Call Now
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
+      </section>
     </>
   );
 }
