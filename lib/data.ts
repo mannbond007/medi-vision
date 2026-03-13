@@ -6,7 +6,7 @@ export const ROUTES = [
   { name: "Study in India", path: "/study-india" },
   { name: "Study Abroad", path: "/study-abroad" },
   { name: "Services", path: "/services" },
-  // { name: "Universities", path: "/universities" },
+  { name: "Other Platforms", path: "/universities" },
   { name: "Contact", path: "/contact" },
 ];
 
