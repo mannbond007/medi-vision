@@ -10,6 +10,7 @@ import {
   Globe,
   GraduationCap,
   Plane,
+  Stethoscope,
   Users,
 } from "lucide-react";
 
@@ -366,9 +367,10 @@ export default function PlatformsPage() {
             <div className="relative flex items-center justify-center">
               <div className="py-20 px-8 md:px-14 text-center md:text-left">
                 {/* Small Label */}
-                <span className="inline-block text-sm text-purple-400 bg-purple-500/10 px-4 py-1 rounded-full mb-5">
-                  Medical Education Consultancy
-                </span>
+                <span className="inline-flex items-center gap-2 text-sm text-purple-400 bg-purple-500/10 border border-purple-500/20 px-4 py-1.5 rounded-full mb-5 backdrop-blur-sm">
+  <Stethoscope size={16} className="text-purple-400" />
+  Medical Education Consultancy
+</span>
 
                 {/* Heading */}
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
