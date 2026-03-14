@@ -227,137 +227,131 @@ export default function PlatformsPage() {
         </section>
 
         {/* HOW IT WORKS */}
-<section className="py-24">
-  <div className="container mx-auto px-6 md:px-12">
-    <AnimatedSection className="text-center mb-16">
-      <h2 className="text-3xl md:text-4xl font-bold text-white">
-        How MBBS Route Helps Students
-      </h2>
+        <section className="py-24">
+          <div className="container mx-auto px-6 md:px-12">
+            <AnimatedSection className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-white">
+                How MBBS Route Helps Students
+              </h2>
 
-      <div className="w-28 h-1 mx-auto mt-4 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500"></div>
-    </AnimatedSection>
+              <div className="w-28 h-1 mx-auto mt-4 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500"></div>
+            </AnimatedSection>
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Card 1 */}
+              <div className="md:col-span-2 p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md hover:bg-white/10 transition group">
+                <div className="relative overflow-hidden rounded-xl mb-6">
+                  <img
+                    src="/bento_01.png"
+                    alt="Discover Universities"
+                    className="w-full h-72 object-cover transition duration-500 group-hover:scale-105"
+                  />
 
-      {/* Card 1 */}
-      <div className="md:col-span-2 p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md hover:bg-white/10 transition group">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
 
-        <div className="relative overflow-hidden rounded-xl mb-6">
-          <img
-            src="/bento_01.png"
-            alt="Discover Universities"
-            className="w-full h-72 object-cover transition duration-500 group-hover:scale-105"
-          />
+                  {/* Badge */}
+                  <div className="absolute top-4 left-4 px-3 py-1 text-xs font-medium bg-purple-600 text-white rounded-full">
+                    Featured
+                  </div>
+                </div>
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                <h3 className="text-2xl font-semibold text-white mb-3">
+                  Discover Top Medical Universities
+                </h3>
 
-          {/* Badge */}
-          <div className="absolute top-4 left-4 px-3 py-1 text-xs font-medium bg-purple-600 text-white rounded-full">
-            Featured
+                <p className="text-slate-400 leading-relaxed max-w-xl">
+                  MBBS Route helps students explore leading medical universities
+                  across Russia, Georgia, Kazakhstan and other destinations.
+                  Compare tuition fees, admission requirements and choose the
+                  right university for your future medical career.
+                </p>
+              </div>
+
+              {/* Card 2 */}
+              <div className="p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md hover:bg-white/10 transition group">
+                <div className="relative overflow-hidden rounded-lg mb-5 aspect-[16/9]">
+                  <img
+                    src="/bento_02.jpg"
+                    alt="Expert Counseling"
+                    className="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent"></div>
+
+                  {/* Badge */}
+                  <div className="absolute top-4 left-4 px-3 py-1 text-xs font-medium bg-indigo-600 text-white rounded-full">
+                    1-on-1 Guidance
+                  </div>
+                </div>
+
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  Expert Counseling
+                </h3>
+
+                <p className="text-slate-400 leading-relaxed">
+                  Get personalized guidance from experienced counselors who help
+                  students choose the right country and university.
+                </p>
+              </div>
+
+              {/* Card 3 */}
+              <div className="p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md hover:bg-white/10 transition group">
+                <div className="relative overflow-hidden rounded-lg mb-6">
+                  <img
+                    src="/bento_03.jpg"
+                    alt="Admission Assistance"
+                    className="w-full h-56 object-cover transition duration-500 group-hover:scale-105"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent"></div>
+
+                  {/* Badge */}
+                  <div className="absolute top-4 left-4 px-3 py-1 text-xs font-medium bg-emerald-600 text-white rounded-full">
+                    Application Support
+                  </div>
+                </div>
+
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  Admission Assistance
+                </h3>
+
+                <p className="text-slate-400 leading-relaxed">
+                  Our team supports students with application submission,
+                  document preparation, and admission confirmation to leading
+                  medical universities abroad.
+                </p>
+              </div>
+
+              {/* Card 4 */}
+              <div className="md:col-span-2 p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md hover:bg-white/10 transition group">
+                <div className="relative overflow-hidden rounded-xl mb-6">
+                  <img
+                    src="/bento_04.png"
+                    alt="Visa & Travel Assistance"
+                    className="w-full h-64 object-cover transition duration-500 group-hover:scale-105"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
+
+                  {/* Badge */}
+                  <div className="absolute top-4 left-4 px-3 py-1 text-xs font-medium bg-orange-600 text-white rounded-full">
+                    Visa Support
+                  </div>
+                </div>
+
+                <h3 className="text-2xl font-semibold text-white mb-3">
+                  Visa & Travel Assistance
+                </h3>
+
+                <p className="text-slate-400 leading-relaxed max-w-xl">
+                  From visa documentation to travel preparation, MBBS Route
+                  ensures students are fully prepared before beginning their
+                  medical education abroad.
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <h3 className="text-2xl font-semibold text-white mb-3">
-          Discover Top Medical Universities
-        </h3>
-
-        <p className="text-slate-400 leading-relaxed max-w-xl">
-          MBBS Route helps students explore leading medical universities
-          across Russia, Georgia, Kazakhstan and other destinations.
-          Compare tuition fees, admission requirements and choose the
-          right university for your future medical career.
-        </p>
-      </div>
-
-      {/* Card 2 */}
-      <div className="p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md hover:bg-white/10 transition group">
-
-        <div className="relative overflow-hidden rounded-lg mb-5 aspect-[16/9]">
-          <img
-            src="/bento_02.jpg"
-            alt="Expert Counseling"
-            className="w-full h-full object-cover transition duration-500 group-hover:scale-105"
-          />
-
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent"></div>
-
-          {/* Badge */}
-          <div className="absolute top-4 left-4 px-3 py-1 text-xs font-medium bg-indigo-600 text-white rounded-full">
-            1-on-1 Guidance
-          </div>
-        </div>
-
-        <h3 className="text-xl font-semibold text-white mb-2">
-          Expert Counseling
-        </h3>
-
-        <p className="text-slate-400 leading-relaxed">
-          Get personalized guidance from experienced counselors who help
-          students choose the right country and university.
-        </p>
-      </div>
-
-      {/* Card 3 */}
-      <div className="p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md hover:bg-white/10 transition group">
-
-        <div className="relative overflow-hidden rounded-lg mb-6">
-          <img
-            src="/bento_03.jpg"
-            alt="Admission Assistance"
-            className="w-full h-56 object-cover transition duration-500 group-hover:scale-105"
-          />
-
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent"></div>
-
-          {/* Badge */}
-          <div className="absolute top-4 left-4 px-3 py-1 text-xs font-medium bg-emerald-600 text-white rounded-full">
-            Application Support
-          </div>
-        </div>
-
-        <h3 className="text-xl font-semibold text-white mb-2">
-          Admission Assistance
-        </h3>
-
-        <p className="text-slate-400 leading-relaxed">
-          Our team supports students with application submission,
-          document preparation, and admission confirmation to leading
-          medical universities abroad.
-        </p>
-      </div>
-
-      {/* Card 4 */}
-      <div className="md:col-span-2 p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md hover:bg-white/10 transition group">
-
-        <div className="relative overflow-hidden rounded-xl mb-6">
-          <img
-            src="/bento_04.png"
-            alt="Visa & Travel Assistance"
-            className="w-full h-64 object-cover transition duration-500 group-hover:scale-105"
-          />
-
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
-
-          {/* Badge */}
-          <div className="absolute top-4 left-4 px-3 py-1 text-xs font-medium bg-orange-600 text-white rounded-full">
-            Visa Support
-          </div>
-        </div>
-
-        <h3 className="text-2xl font-semibold text-white mb-3">
-          Visa & Travel Assistance
-        </h3>
-
-        <p className="text-slate-400 leading-relaxed max-w-xl">
-          From visa documentation to travel preparation, MBBS Route
-          ensures students are fully prepared before beginning their
-          medical education abroad.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
+        </section>
 
         {/* FINAL CTA */}
         <section className="py-32 relative">
@@ -377,9 +371,9 @@ export default function PlatformsPage() {
               <div className="py-20 px-8 md:px-14 text-center md:text-left">
                 {/* Small Label */}
                 <span className="inline-flex items-center gap-2 text-sm text-purple-400 bg-purple-500/10 border border-purple-500/20 px-4 py-1.5 rounded-full mb-5 backdrop-blur-sm">
-  <Stethoscope size={16} className="text-purple-400" />
-  Medical Education Consultancy
-</span>
+                  <Stethoscope size={16} className="text-purple-400" />
+                  Medical Education Consultancy
+                </span>
 
                 {/* Heading */}
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
