@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 
 import AnimatedSection, {
   StaggerChildren,
@@ -13,8 +12,6 @@ import {
   Target,
   Eye,
   Gem,
-  ArrowRight,
-  TrendingUp,
   Globe2,
   Plane,
   Stethoscope,
@@ -70,7 +67,10 @@ export default function About() {
                 { value: "15+ Years", label: "Industry Experience" },
                 { value: "1000+", label: "Students Guided for MBBS" },
                 { value: "25+", label: "Medical University Partners" },
-                { value: "India & International", label: "MBBS Admission Services" },
+                {
+                  value: "India & International",
+                  label: "MBBS Admission Services",
+                },
               ].map((item, i) => (
                 <div
                   key={i}
@@ -86,7 +86,7 @@ export default function About() {
                   {/* Accent Line */}
                   <div
                     className="absolute top-0 left-1/2 -translate-x-1/2 
-        w-16 md:w-20 h-[3px] bg-emerald-400 opacity-70"
+                  w-16 md:w-20 h-[3px] bg-emerald-400 opacity-70"
                   />
 
                   <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-emerald-400">
@@ -132,7 +132,7 @@ export default function About() {
                 </div>
 
                 {/* Floating Badge */}
-                <div className="absolute -bottom-10 -left-4 sm:-bottom-[65px] sm:-left-12 bg-white/90 backdrop-blur-xl border border-emerald-200/70 rounded-2xl px-10 py-3 shadow-xl">
+                <div className="absolute -bottom-18 -left-4 sm:-bottom-[65px] sm:-left-12 bg-white/90 backdrop-blur-xl border border-emerald-200/70 rounded-2xl px-10 py-3 shadow-xl">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center">
                       <Users size={22} />
@@ -149,10 +149,10 @@ export default function About() {
                 </div>
 
                 {/* Floating Excellence Card */}
-                <div className="absolute top-8 right-8 sm:-top-[65px] sm:-right-5 bg-white/85 backdrop-blur-xl border border-emerald-200/70 px-10 py-3 rounded-2xl shadow-xl">
+                <div className="absolute -top-20 right-8 sm:-top-[65px] sm:-right-5 bg-white/85 backdrop-blur-xl border border-emerald-200/70 px-10 py-1 rounded-2xl shadow-xl sm:py-3">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center">
-                      <Award size={20} />
+                    <div className="w-12 h-12 min-w-[40px] min-h-[40px] flex-shrink-0 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center">
+                      <Award size={22} />
                     </div>
                     <div>
                       <div className="text-sm text-slate-500 font-medium">
@@ -170,17 +170,17 @@ export default function About() {
             <AnimatedSection>
               <div
                 className="inline-flex items-center gap-3 
-  px-4 py-1.5 
-  rounded-full 
-  bg-white/60 backdrop-blur-md 
-  border border-[#00A896]/40 
-  text-[#00A896] 
-  text-sm font-semibold 
-  tracking-wide mb-4 shadow-sm"
+                px-4 py-1.5 
+                rounded-full 
+                bg-white/60 backdrop-blur-md 
+                border border-[#00A896]/40 
+                text-[#00A896] 
+                text-sm font-semibold 
+                tracking-wide mb-4 shadow-sm"
               >
                 <div
                   className="w-9 h-9 flex items-center justify-center 
-    rounded-full bg-[#00A896] text-white"
+                rounded-full bg-[#00A896] text-white"
                 >
                   <GraduationCap size={18} />
                 </div>
@@ -235,10 +235,8 @@ export default function About() {
 
       {/* ================= TIMELINE ================= */}
 
-
       <section className="py-28 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
         <div className="container mx-auto px-6 md:px-12">
-
           {/* Header */}
           <AnimatedSection className="text-center max-w-3xl mx-auto mb-24">
             <h2
@@ -265,12 +263,10 @@ export default function About() {
 
           {/* Timeline Wrapper */}
           <div className="max-w-6xl mx-auto relative">
-
             {/* Vertical Line */}
             <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-[2px] bg-slate-200 -translate-x-1/2" />
 
             <StaggerChildren className="space-y-20">
-
               {[
                 {
                   label: "Foundation",
@@ -323,10 +319,10 @@ export default function About() {
               ].map((item, i) => (
                 <StaggerItem
                   key={i}
-                  className={`relative flex flex-col md:flex-row gap-12 ${i % 2 === 0 ? "md:flex-row-reverse" : ""
-                    }`}
+                  className={`relative flex flex-col md:flex-row gap-12 ${
+                    i % 2 === 0 ? "md:flex-row-reverse" : ""
+                  }`}
                 >
-
                   {/* Card */}
                   <div className="flex-1 md:w-[58%] pl-16 md:pl-0">
                     <div
@@ -336,12 +332,13 @@ export default function About() {
                 hover:shadow-[0_25px_70px_-20px_rgba(0,0,0,0.12)]
                 transition-all duration-500"
                     >
-
                       {/* Label Badge with Icon */}
-                      <div className="inline-flex items-center gap-2 px-4 py-2 
+                      <div
+                        className="inline-flex items-center gap-2 px-4 py-2 
                   bg-accent/10 border border-accent/20 
                   rounded-full text-accent text-xs font-semibold 
-                  uppercase tracking-[0.25em] w-fit">
+                  uppercase tracking-[0.25em] w-fit"
+                      >
                         <item.icon className="w-4 h-4 text-accent" />
                         {item.label}
                       </div>
@@ -367,7 +364,6 @@ export default function About() {
                           </li>
                         ))}
                       </ul>
-
                     </div>
                   </div>
 
@@ -383,7 +379,6 @@ export default function About() {
                 </StaggerItem>
               ))}
             </StaggerChildren>
-
           </div>
         </div>
       </section>

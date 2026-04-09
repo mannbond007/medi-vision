@@ -2,16 +2,11 @@ import AnimatedSection, {
   StaggerChildren,
   StaggerItem,
 } from "@/components/AnimatedSection";
-import ServiceCard from "@/components/ServiceCard";
 import { SERVICES } from "@/lib/data";
-import { div } from "framer-motion/client";
 import {
   GraduationCap,
   FileText,
   FileCheck,
-  Sparkles,
-  Briefcase,
-  Settings,
   CircleCheckBig,
   Home,
 } from "lucide-react";

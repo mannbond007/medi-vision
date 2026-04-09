@@ -2,11 +2,9 @@ import Hero from "@/components/Hero";
 import AnimatedSection from "@/components/AnimatedSection";
 import Link from "next/link";
 import {
-  ArrowRight,
   Plane,
   Building2,
   Users,
-  Star,
   Award,
   GraduationCap,
   CheckCircle,
