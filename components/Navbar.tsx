@@ -12,6 +12,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
+  // Scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -20,6 +21,19 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // ✅ Fix: Lock background scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
 
   return (
     <nav
@@ -93,71 +107,73 @@ export default function Navbar() {
         </div>
 
         {/* MOBILE MENU BUTTON */}
-<button
-  onClick={() => setIsOpen(!isOpen)}
-  className="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition"
-  aria-expanded={isOpen}
->
-  {isOpen ? <X size={26} /> : <Menu size={26} />}
-</button>
-</div>
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition"
+          aria-expanded={isOpen}
+        >
+          {isOpen ? <X size={26} /> : <Menu size={26} />}
+        </button>
+      </div>
 
-{/* MOBILE DRAWER */}
-<AnimatePresence>
-  {isOpen && (
-    <>
-      {/* overlay */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.35 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.18 }}
-        onClick={() => setIsOpen(false)}
-        className="fixed inset-0 bg-black/40 backdrop-blur-sm lg:hidden"
-      />
-
-      {/* drawer */}
-      <motion.div
-        initial={{ x: "100%" }}
-        animate={{ x: 0 }}
-        exit={{ x: "100%" }}
-        transition={{ duration: 0.22, ease: "easeOut" }}
-        className="fixed right-0 top-0 h-full w-[280px] bg-white shadow-2xl lg:hidden p-6"
-      >
-        <div className="flex justify-end mb-8">
-          <button onClick={() => setIsOpen(false)}>
-            <X size={26} />
-          </button>
-        </div>
-
-        <div className="flex flex-col gap-6">
-          {ROUTES.map((route) => (
-            <Link
-              key={route.path}
-              href={route.path}
+      {/* MOBILE MENU */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div className="lg:hidden">
+            
+            {/* ✅ Overlay (fixed z-index) */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.35 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.18 }}
               onClick={() => setIsOpen(false)}
-              className={`text-lg font-semibold transition ${
-                pathname === route.path
-                  ? "text-accent"
-                  : "text-slate-700 hover:text-primary"
-              }`}
-            >
-              {route.name}
-            </Link>
-          ))}
+              className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[60]"
+            />
 
-          <Link
-            href="/contact"
-            onClick={() => setIsOpen(false)}
-            className="bg-primary text-white px-5 py-3 rounded-lg text-center font-semibold mt-4 hover:shadow-md transition"
-          >
-            Get Consulting
-          </Link>
-        </div>
-      </motion.div>
-    </>
-  )}
-</AnimatePresence>
+            {/* ✅ Drawer (above overlay) */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.22, ease: "easeOut" }}
+              className="fixed right-0 top-0 h-full w-[280px] bg-white shadow-2xl p-6 z-[70] will-change-transform"
+            >
+              <div className="flex justify-end mb-8">
+                <button onClick={() => setIsOpen(false)}>
+                  <X size={26} />
+                </button>
+              </div>
+
+              <div className="flex flex-col gap-6">
+                {ROUTES.map((route) => (
+                  <Link
+                    key={route.path}
+                    href={route.path}
+                    onClick={() => setIsOpen(false)}
+                    className={`text-lg font-semibold transition ${
+                      pathname === route.path
+                        ? "text-accent"
+                        : "text-slate-700 hover:text-primary"
+                    }`}
+                  >
+                    {route.name}
+                  </Link>
+                ))}
+
+                <Link
+                  href="/contact"
+                  onClick={() => setIsOpen(false)}
+                  className="bg-primary text-white px-5 py-3 rounded-lg text-center font-semibold mt-4 hover:shadow-md transition"
+                >
+                  Get Consulting
+                </Link>
+              </div>
+            </motion.div>
+
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
